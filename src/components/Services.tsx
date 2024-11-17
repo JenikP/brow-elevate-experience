@@ -1,77 +1,153 @@
-const services = [
-  {
-    title: "Eyebrow Threading",
-    price: "$15",
-    description: "Precise shaping using the ancient art of threading",
-    duration: "15 mins"
-  },
-  {
-    title: "Upper Lip Threading",
-    price: "$8",
-    description: "Gentle hair removal for a smooth finish",
-    duration: "10 mins"
-  },
-  {
-    title: "Full Face Threading",
-    price: "$40",
-    description: "Complete facial hair removal treatment",
-    duration: "30 mins"
-  },
-  {
-    title: "Eyebrow Tinting",
-    price: "$20",
-    description: "Enhanced color for fuller-looking brows",
-    duration: "20 mins"
-  },
-  {
-    title: "Chin Threading",
-    price: "$10",
-    description: "Precise hair removal for chin area",
-    duration: "10 mins"
-  },
-  {
-    title: "Neck Threading",
-    price: "$12",
-    description: "Clean and smooth neck hair removal",
-    duration: "15 mins"
-  },
-  {
-    title: "Sideburns Threading",
-    price: "$12",
-    description: "Shape and define your sideburns",
-    duration: "15 mins"
-  },
-  {
-    title: "Forehead Threading",
-    price: "$10",
-    description: "Smooth forehead hair removal",
-    duration: "10 mins"
-  },
-  {
-    title: "Full Face + Neck Threading",
-    price: "$45",
-    description: "Complete facial and neck hair removal package",
-    duration: "45 mins"
-  },
-  {
-    title: "Henna Brows",
-    price: "$35",
-    description: "Natural-looking, semi-permanent brow tinting",
-    duration: "30 mins"
-  },
-  {
-    title: "Brow Lamination",
-    price: "$70",
-    description: "Restructure brow hairs for a fuller, lifted look",
-    duration: "45 mins"
-  },
-  {
-    title: "Brow Threading + Tinting Package",
-    price: "$30",
-    description: "Complete brow transformation package",
-    duration: "35 mins"
-  }
-];
+const services = {
+  facialThreadingWaxing: [
+    {
+      title: "Eyebrow Threading/Waxing",
+      price: "$12",
+      description: "Precise shaping and hair removal",
+      duration: "15 mins"
+    },
+    {
+      title: "Upper Lip",
+      price: "$10",
+      description: "Gentle hair removal for a smooth finish",
+      duration: "10 mins"
+    },
+    {
+      title: "Forehead",
+      price: "$10",
+      description: "Smooth forehead hair removal",
+      duration: "10 mins"
+    },
+    {
+      title: "Chin",
+      price: "$10",
+      description: "Precise chin hair removal",
+      duration: "10 mins"
+    },
+    {
+      title: "Side Burns",
+      price: "$10",
+      description: "Shape and define your sideburns",
+      duration: "10 mins"
+    },
+    {
+      title: "Neck",
+      price: "$10",
+      description: "Clean and smooth neck hair removal",
+      duration: "10 mins"
+    },
+    {
+      title: "Full Face",
+      price: "$45",
+      description: "Complete facial hair removal",
+      duration: "45 mins"
+    }
+  ],
+  bodyWaxing: [
+    {
+      title: "Under Arms",
+      price: "$12",
+      description: "Smooth underarm hair removal",
+      duration: "15 mins"
+    },
+    {
+      title: "Half Arm",
+      price: "$22",
+      description: "Partial arm waxing service",
+      duration: "20 mins"
+    },
+    {
+      title: "Full Arm",
+      price: "$30",
+      description: "Complete arm waxing treatment",
+      duration: "30 mins"
+    },
+    {
+      title: "Half Leg",
+      price: "$28",
+      description: "Partial leg waxing service",
+      duration: "25 mins"
+    },
+    {
+      title: "Full Leg",
+      price: "$40",
+      description: "Complete leg waxing treatment",
+      duration: "45 mins"
+    },
+    {
+      title: "Full Body",
+      price: "$220",
+      description: "Complete body waxing package",
+      duration: "120 mins"
+    }
+  ],
+  beautyAddOns: [
+    {
+      title: "Eyebrow Tint",
+      price: "$15",
+      description: "Enhanced color for fuller-looking brows",
+      duration: "15 mins"
+    },
+    {
+      title: "Eyelash Tint",
+      price: "$20",
+      description: "Darker, more defined lashes",
+      duration: "20 mins"
+    },
+    {
+      title: "Eyelash Lift with Tint",
+      price: "$50",
+      description: "Lifted and tinted lashes for a dramatic look",
+      duration: "45 mins"
+    },
+    {
+      title: "Eyebrow Henna Tattoo",
+      price: "$40",
+      description: "Semi-permanent brow enhancement",
+      duration: "40 mins"
+    },
+    {
+      title: "Eyebrow Lamination with Tint",
+      price: "$65",
+      description: "Restructured and tinted brows for a fuller look",
+      duration: "60 mins"
+    }
+  ],
+  facial: [
+    {
+      title: "Mini Facial",
+      price: "from $50",
+      description: "Quick refreshing facial treatment",
+      duration: "30 mins"
+    },
+    {
+      title: "Full Facial",
+      price: "from $80",
+      description: "Complete facial treatment for ultimate rejuvenation",
+      duration: "60 mins"
+    }
+  ],
+  comboOffers: [
+    {
+      title: "Eyebrow + Upper Lip",
+      price: "$20",
+      description: "Popular combo for complete face framing",
+      duration: "25 mins"
+    },
+    {
+      title: "Eyebrow Threading & Eyelash Tint",
+      price: "$28",
+      description: "Perfect combination for defined eyes",
+      duration: "35 mins"
+    },
+    {
+      title: "Eyebrow Tint & Eyelash Tint",
+      price: "$30",
+      description: "Complete eye enhancement package",
+      duration: "35 mins"
+    }
+  ]
+};
 
 const Services = () => {
   return (
@@ -80,25 +156,32 @@ const Services = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-secondary mb-4">Our Services</h2>
           <p className="text-warmGray max-w-2xl mx-auto">
-            Experience our range of professional threading and beauty services, tailored to enhance your natural beauty.
+            Experience our comprehensive range of professional beauty services, tailored to enhance your natural beauty.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service, index) => (
-            <div 
-              key={index}
-              className="bg-pearl p-6 rounded-lg hover:shadow-lg transition-shadow duration-300"
-            >
-              <div className="text-center">
-                <h3 className="text-xl font-semibold text-secondary mb-2">{service.title}</h3>
-                <p className="text-2xl font-bold text-primary-dark mb-4">{service.price}</p>
-                <p className="text-warmGray mb-4">{service.description}</p>
-                <p className="text-sm text-secondary">{service.duration}</p>
-              </div>
+        {Object.entries(services).map(([category, items]) => (
+          <div key={category} className="mb-16">
+            <h3 className="text-2xl font-bold text-primary mb-8 text-center capitalize">
+              {category.replace(/([A-Z])/g, ' $1').trim()}
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {items.map((service, index) => (
+                <div 
+                  key={index}
+                  className="bg-pearl p-6 rounded-lg hover:shadow-lg transition-shadow duration-300"
+                >
+                  <div className="text-center">
+                    <h4 className="text-xl font-semibold text-secondary mb-2">{service.title}</h4>
+                    <p className="text-2xl font-bold text-primary-dark mb-4">{service.price}</p>
+                    <p className="text-warmGray mb-4">{service.description}</p>
+                    <p className="text-sm text-secondary">{service.duration}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
 
         <div className="text-center mt-12">
           <button className="bg-primary hover:bg-primary-dark text-secondary px-8 py-3 rounded-full text-lg transition-colors">
