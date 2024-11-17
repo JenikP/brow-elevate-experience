@@ -22,6 +22,54 @@ const services = [
     price: "$20",
     description: "Enhanced color for fuller-looking brows",
     duration: "20 mins"
+  },
+  {
+    title: "Chin Threading",
+    price: "$10",
+    description: "Precise hair removal for chin area",
+    duration: "10 mins"
+  },
+  {
+    title: "Neck Threading",
+    price: "$12",
+    description: "Clean and smooth neck hair removal",
+    duration: "15 mins"
+  },
+  {
+    title: "Sideburns Threading",
+    price: "$12",
+    description: "Shape and define your sideburns",
+    duration: "15 mins"
+  },
+  {
+    title: "Forehead Threading",
+    price: "$10",
+    description: "Smooth forehead hair removal",
+    duration: "10 mins"
+  },
+  {
+    title: "Full Face + Neck Threading",
+    price: "$45",
+    description: "Complete facial and neck hair removal package",
+    duration: "45 mins"
+  },
+  {
+    title: "Henna Brows",
+    price: "$35",
+    description: "Natural-looking, semi-permanent brow tinting",
+    duration: "30 mins"
+  },
+  {
+    title: "Brow Lamination",
+    price: "$70",
+    description: "Restructure brow hairs for a fuller, lifted look",
+    duration: "45 mins"
+  },
+  {
+    title: "Brow Threading + Tinting Package",
+    price: "$30",
+    description: "Complete brow transformation package",
+    duration: "35 mins"
   }
 ];
 
