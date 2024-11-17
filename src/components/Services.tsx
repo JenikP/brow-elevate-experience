@@ -2,43 +2,43 @@ const services = {
   facialThreadingWaxing: [
     {
       title: "Eyebrow Threading/Waxing",
-      price: "$12",
+      price: "from $12",
       description: "Precise shaping and hair removal",
       duration: "15 mins"
     },
     {
       title: "Upper Lip",
-      price: "$10",
+      price: "from $10",
       description: "Gentle hair removal for a smooth finish",
       duration: "10 mins"
     },
     {
       title: "Forehead",
-      price: "$10",
+      price: "from $10",
       description: "Smooth forehead hair removal",
       duration: "10 mins"
     },
     {
       title: "Chin",
-      price: "$10",
+      price: "from $10",
       description: "Precise chin hair removal",
       duration: "10 mins"
     },
     {
       title: "Side Burns",
-      price: "$10",
+      price: "from $10",
       description: "Shape and define your sideburns",
       duration: "10 mins"
     },
     {
       title: "Neck",
-      price: "$10",
+      price: "from $10",
       description: "Clean and smooth neck hair removal",
       duration: "10 mins"
     },
     {
       title: "Full Face",
-      price: "$45",
+      price: "from $45",
       description: "Complete facial hair removal",
       duration: "45 mins"
     }
@@ -46,37 +46,37 @@ const services = {
   bodyWaxing: [
     {
       title: "Under Arms",
-      price: "$12",
+      price: "from $12",
       description: "Smooth underarm hair removal",
       duration: "15 mins"
     },
     {
       title: "Half Arm",
-      price: "$22",
+      price: "from $22",
       description: "Partial arm waxing service",
       duration: "20 mins"
     },
     {
       title: "Full Arm",
-      price: "$30",
+      price: "from $30",
       description: "Complete arm waxing treatment",
       duration: "30 mins"
     },
     {
       title: "Half Leg",
-      price: "$28",
+      price: "from $28",
       description: "Partial leg waxing service",
       duration: "25 mins"
     },
     {
       title: "Full Leg",
-      price: "$40",
+      price: "from $40",
       description: "Complete leg waxing treatment",
       duration: "45 mins"
     },
     {
       title: "Full Body",
-      price: "$220",
+      price: "from $220",
       description: "Complete body waxing package",
       duration: "120 mins"
     }
@@ -84,31 +84,31 @@ const services = {
   beautyAddOns: [
     {
       title: "Eyebrow Tint",
-      price: "$15",
+      price: "from $15",
       description: "Enhanced color for fuller-looking brows",
       duration: "15 mins"
     },
     {
       title: "Eyelash Tint",
-      price: "$20",
+      price: "from $20",
       description: "Darker, more defined lashes",
       duration: "20 mins"
     },
     {
       title: "Eyelash Lift with Tint",
-      price: "$50",
+      price: "from $50",
       description: "Lifted and tinted lashes for a dramatic look",
       duration: "45 mins"
     },
     {
       title: "Eyebrow Henna Tattoo",
-      price: "$40",
+      price: "from $40",
       description: "Semi-permanent brow enhancement",
       duration: "40 mins"
     },
     {
       title: "Eyebrow Lamination with Tint",
-      price: "$65",
+      price: "from $65",
       description: "Restructured and tinted brows for a fuller look",
       duration: "60 mins"
     }
@@ -130,19 +130,19 @@ const services = {
   comboOffers: [
     {
       title: "Eyebrow + Upper Lip",
-      price: "$20",
+      price: "from $20",
       description: "Popular combo for complete face framing",
       duration: "25 mins"
     },
     {
       title: "Eyebrow Threading & Eyelash Tint",
-      price: "$28",
+      price: "from $28",
       description: "Perfect combination for defined eyes",
       duration: "35 mins"
     },
     {
       title: "Eyebrow Tint & Eyelash Tint",
-      price: "$30",
+      price: "from $30",
       description: "Complete eye enhancement package",
       duration: "35 mins"
     }
