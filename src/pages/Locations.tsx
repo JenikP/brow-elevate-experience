@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useLoadScript } from "@react-google-maps/api";
 import LocationMap from "../components/locations/LocationMap";
 import LocationCard from "../components/locations/LocationCard";
-import { Phone } from "lucide-react";
+import Navbar from "../components/Navbar";
 
 const locations = [
   {
@@ -83,8 +83,9 @@ const Locations = () => {
   if (!isLoaded) return <div>Loading...</div>;
 
   return (
-    <div className="min-h-screen pt-16 bg-pearl">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-pearl">
+      <Navbar />
+      <div className="container mx-auto px-4 py-12 pt-24">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-secondary mb-4">
             Visit Us at One of Our Five Convenient Locations
