@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +10,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <span className="text-2xl font-semibold text-secondary">Brow Arc</span>
+            <Link to="/" className="text-2xl font-semibold text-secondary">Brow Arc</Link>
           </div>
           
           {/* Desktop menu */}
@@ -17,6 +18,7 @@ const Navbar = () => {
             <a href="#services" className="text-charcoal hover:text-secondary transition-colors">Services</a>
             <a href="#about" className="text-charcoal hover:text-secondary transition-colors">About</a>
             <a href="#testimonials" className="text-charcoal hover:text-secondary transition-colors">Testimonials</a>
+            <Link to="/locations" className="text-charcoal hover:text-secondary transition-colors">Locations</Link>
             <a href="#contact" className="text-charcoal hover:text-secondary transition-colors">Contact</a>
             <button className="bg-primary hover:bg-primary-dark text-secondary px-6 py-2 rounded-full transition-colors">
               Book Now
@@ -38,6 +40,7 @@ const Navbar = () => {
               <a href="#services" className="block px-3 py-2 text-charcoal hover:text-secondary">Services</a>
               <a href="#about" className="block px-3 py-2 text-charcoal hover:text-secondary">About</a>
               <a href="#testimonials" className="block px-3 py-2 text-charcoal hover:text-secondary">Testimonials</a>
+              <Link to="/locations" className="block px-3 py-2 text-charcoal hover:text-secondary">Locations</Link>
               <a href="#contact" className="block px-3 py-2 text-charcoal hover:text-secondary">Contact</a>
               <button className="w-full mt-4 bg-primary hover:bg-primary-dark text-secondary px-6 py-2 rounded-full">
                 Book Now
