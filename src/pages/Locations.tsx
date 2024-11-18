@@ -77,7 +77,7 @@ const locations = [
 const Locations = () => {
   const [selectedLocation, setSelectedLocation] = useState<number | null>(null);
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "YOUR_GOOGLE_MAPS_API_KEY", // Replace with actual API key
+    googleMapsApiKey: "AIzaSyCqm_04Dum-ER0Tk9zgm2cTfmZzEmAet-8", // Replace with actual API key
   });
 
   if (!isLoaded) return <div>Loading...</div>;
