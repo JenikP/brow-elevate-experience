@@ -193,11 +193,11 @@ const services = {
 };
 
 const locationNames = {
-  location1: "Downtown Store",
-  location2: "Westside Plaza",
-  location3: "Eastside Mall",
-  location4: "North Center",
-  location5: "South Square"
+  location1: "Brandon Park Shopping Centre",
+  location2: "Southland Shopping Centre",
+  location3: "Pakenham Shopping Centre",
+  location4: "Stud Park Shopping Centre",
+  location5: "Heidelberg Shopping Centre"
 };
 
 const Services = () => {
