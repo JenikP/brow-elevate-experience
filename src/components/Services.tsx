@@ -1,3 +1,6 @@
+import { Phone } from "lucide-react";
+import ServiceCategory from './services/ServiceCategory';
+
 const services = {
   facialThreadingWaxing: [
     {
@@ -165,26 +168,7 @@ const Services = () => {
         </div>
 
         {Object.entries(services).map(([category, items]) => (
-          <div key={category} className="mb-16">
-            <h3 className="text-2xl font-bold text-primary mb-8 text-center capitalize">
-              {category.replace(/([A-Z])/g, ' $1').trim()}
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {items.map((service, index) => (
-                <div 
-                  key={index}
-                  className="bg-pearl p-6 rounded-lg hover:shadow-lg transition-shadow duration-300"
-                >
-                  <div className="text-center">
-                    <h4 className="text-xl font-semibold text-secondary mb-2">{service.title}</h4>
-                    <p className="text-2xl font-bold text-primary-dark mb-4">{service.price}</p>
-                    <p className="text-warmGray mb-4">{service.description}</p>
-                    <p className="text-sm text-secondary">{service.duration}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <ServiceCategory key={category} category={category} items={items} />
         ))}
 
         <div className="text-center mt-12">
