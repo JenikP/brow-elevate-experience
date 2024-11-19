@@ -150,6 +150,10 @@ const services = {
 };
 
 const Services = () => {
+  const handleCall = () => {
+    window.location.href = "tel:+61123456789";
+  };
+
   return (
     <section id="services" className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -184,7 +188,11 @@ const Services = () => {
         ))}
 
         <div className="text-center mt-12">
-          <button className="bg-primary hover:bg-primary-dark text-secondary px-8 py-3 rounded-full text-lg transition-colors">
+          <button 
+            onClick={handleCall}
+            className="bg-primary hover:bg-primary-dark text-secondary px-8 py-3 rounded-full text-lg transition-colors flex items-center gap-2 mx-auto"
+          >
+            <Phone size={20} />
             Book Now
           </button>
         </div>

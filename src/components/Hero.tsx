@@ -1,4 +1,10 @@
+import { Phone } from "lucide-react";
+
 const Hero = () => {
+  const handleCall = () => {
+    window.location.href = "tel:+61123456789";
+  };
+
   return (
     <div className="relative min-h-screen flex items-center bg-pearl">
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1649972904349-6e44c42644a7')] bg-cover bg-center opacity-10"></div>
@@ -12,12 +18,19 @@ const Hero = () => {
             Where precision meets beauty. Experience the art of perfect brows with our expert threading services.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-secondary hover:bg-secondary-light text-white px-8 py-3 rounded-full text-lg transition-colors">
+            <button 
+              onClick={handleCall}
+              className="bg-secondary hover:bg-secondary-light text-white px-8 py-3 rounded-full text-lg transition-colors flex items-center justify-center gap-2"
+            >
+              <Phone size={20} />
               Book Appointment
             </button>
-            <button className="border-2 border-secondary text-secondary hover:bg-secondary hover:text-white px-8 py-3 rounded-full text-lg transition-colors">
+            <a 
+              href="#services"
+              className="border-2 border-secondary text-secondary hover:bg-secondary hover:text-white px-8 py-3 rounded-full text-lg transition-colors text-center"
+            >
               View Services
-            </button>
+            </a>
           </div>
         </div>
       </div>

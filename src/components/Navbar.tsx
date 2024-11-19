@@ -1,9 +1,13 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleCall = () => {
+    window.location.href = "tel:+61123456789";
+  };
 
   return (
     <nav className="fixed w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
@@ -20,7 +24,11 @@ const Navbar = () => {
             <a href="#testimonials" className="text-charcoal hover:text-secondary transition-colors">Testimonials</a>
             <Link to="/locations" className="text-charcoal hover:text-secondary transition-colors">Locations</Link>
             <a href="#contact" className="text-charcoal hover:text-secondary transition-colors">Contact</a>
-            <button className="bg-primary hover:bg-primary-dark text-secondary px-6 py-2 rounded-full transition-colors">
+            <button 
+              onClick={handleCall}
+              className="bg-primary hover:bg-primary-dark text-secondary px-6 py-2 rounded-full transition-colors flex items-center gap-2"
+            >
+              <Phone size={18} />
               Book Now
             </button>
           </div>
@@ -42,7 +50,11 @@ const Navbar = () => {
               <a href="#testimonials" className="block px-3 py-2 text-charcoal hover:text-secondary">Testimonials</a>
               <Link to="/locations" className="block px-3 py-2 text-charcoal hover:text-secondary">Locations</Link>
               <a href="#contact" className="block px-3 py-2 text-charcoal hover:text-secondary">Contact</a>
-              <button className="w-full mt-4 bg-primary hover:bg-primary-dark text-secondary px-6 py-2 rounded-full">
+              <button 
+                onClick={handleCall}
+                className="w-full mt-4 bg-primary hover:bg-primary-dark text-secondary px-6 py-2 rounded-full flex items-center justify-center gap-2"
+              >
+                <Phone size={18} />
                 Book Now
               </button>
             </div>
