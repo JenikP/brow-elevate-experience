@@ -12,6 +12,7 @@ const locations = [
     description: "Our friendly shop is designed to maintain your privacy, ensuring a comfortable experience.",
     coordinates: { lat: -37.9007, lng: 145.1618 },
     phone: "+61123456789",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
     hours: {
       "Monday – Wednesday": "9:00 am – 5:30 pm",
       "Thursday – Friday": "9:00 am – 7:00 pm",
@@ -25,6 +26,7 @@ const locations = [
     address: "Located conveniently at Southland Shopping Center",
     coordinates: { lat: -37.9594, lng: 145.0544 },
     phone: "+61123456789",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
     hours: {
       "Monday – Wednesday": "9:00 am – 5:30 pm",
       "Thursday – Friday": "9:00 am – 7:00 pm",
@@ -39,6 +41,7 @@ const locations = [
     description: "Our kiosk ensures both privacy and quick access to all services.",
     coordinates: { lat: -38.0755, lng: 145.4845 },
     phone: "+61123456789",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
     hours: {
       "Monday – Wednesday": "9:00 am – 5:30 pm",
       "Thursday – Friday": "9:00 am – 7:00 pm",
@@ -52,6 +55,7 @@ const locations = [
     address: "StudPark Shopping Centre (opposite Coles)",
     coordinates: { lat: -37.9082, lng: 145.2305 },
     phone: "+61123456789",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
     hours: {
       "Monday – Wednesday": "9:00 am – 5:30 pm",
       "Thursday – Friday": "9:00 am – 7:00 pm",
@@ -65,6 +69,7 @@ const locations = [
     address: "Heidelberg Shopping Centre (near TK Maxx)",
     coordinates: { lat: -37.7566, lng: 145.0695 },
     phone: "+61123456789",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
     hours: {
       "Monday – Wednesday": "9:00 am – 5:30 pm",
       "Thursday – Friday": "9:00 am – 7:00 pm",

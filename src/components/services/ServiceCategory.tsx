@@ -1,11 +1,16 @@
 import { FC } from 'react';
 import ServiceCard from './ServiceCard';
+import { useLocation } from 'react-router-dom';
 
 interface Service {
   title: string;
   price: string;
   description: string;
   duration: string;
+  image: string;
+  locationPrices?: {
+    [key: string]: string;
+  };
 }
 
 interface ServiceCategoryProps {
@@ -14,6 +19,33 @@ interface ServiceCategoryProps {
 }
 
 const ServiceCategory: FC<ServiceCategoryProps> = ({ category, items }) => {
+  const { pathname } = useLocation();
+  const currentLocation = pathname.split('/')[2]; // Gets location from URL if present
+
+  const getServiceImage = (service: string) => {
+    const baseUrl = "https://images.unsplash.com/photo-";
+    const images: { [key: string]: string } = {
+      "Eyebrow Threading/Waxing": "1522337360788-8b13dee7a37e",
+      "Upper Lip": "1522337360788-8b13dee7a37e",
+      "Forehead": "1522337360788-8b13dee7a37e",
+      "Chin": "1522337360788-8b13dee7a37e",
+      "Side Burns": "1522337360788-8b13dee7a37e",
+      "Neck": "1522337360788-8b13dee7a37e",
+      "Full Face": "1522337360788-8b13dee7a37e",
+      "Under Arms": "1522337360788-8b13dee7a37e",
+      "Half Arm": "1522337360788-8b13dee7a37e",
+      "Full Arm": "1522337360788-8b13dee7a37e",
+      "Half Leg": "1522337360788-8b13dee7a37e",
+      "Full Leg": "1522337360788-8b13dee7a37e",
+      "Full Body": "1522337360788-8b13dee7a37e",
+      "Mini Facial": "1522337360788-8b13dee7a37e",
+      "Full Facial": "1522337360788-8b13dee7a37e",
+      // Add more service-image mappings as needed
+    };
+    
+    return `${baseUrl}${images[service] || images["Eyebrow Threading/Waxing"]}?auto=format&fit=crop&w=800&q=80`;
+  };
+
   return (
     <div className="mb-16">
       <h3 className="text-2xl font-bold text-primary mb-8 text-center capitalize">
@@ -21,7 +53,14 @@ const ServiceCategory: FC<ServiceCategoryProps> = ({ category, items }) => {
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {items.map((service, index) => (
-          <ServiceCard key={index} {...service} />
+          <ServiceCard
+            key={index}
+            {...service}
+            price={currentLocation && service.locationPrices?.[currentLocation] 
+              ? service.locationPrices[currentLocation]
+              : service.price}
+            image={getServiceImage(service.title)}
+          />
         ))}
       </div>
     </div>
