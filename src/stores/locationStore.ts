@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 type LocationStore = {
   selectedLocation: string | null;
   setSelectedLocation: (location: string) => void;
@@ -17,9 +19,9 @@ const locationStore: LocationStore = {
 };
 
 export const useLocationStore = () => {
-  const [, setUpdate] = React.useState({});
+  const [, setUpdate] = useState({});
 
-  React.useEffect(() => {
+  useEffect(() => {
     const listener = () => setUpdate({});
     listeners.push(listener);
     return () => {
