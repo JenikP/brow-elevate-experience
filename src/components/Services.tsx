@@ -4,6 +4,7 @@ import ServiceCategory from './services/ServiceCategory';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 import { useNavigate } from "react-router-dom";
+import { useLocationStore } from "../stores/locationStore";
 
 const services = {
   facialThreadingWaxing: [
@@ -201,20 +202,17 @@ const locationNames = {
 
 const Services = () => {
   const [showLocationDialog, setShowLocationDialog] = useState(true);
-  const [selectedLocation, setSelectedLocation] = useState<string | null>(null);
+  const { selectedLocation, setSelectedLocation } = useLocationStore();
   const navigate = useNavigate();
 
   useEffect(() => {
-    const savedLocation = localStorage.getItem('selectedLocation');
-    if (savedLocation) {
-      setSelectedLocation(savedLocation);
+    if (selectedLocation) {
       setShowLocationDialog(false);
     }
-  }, []);
+  }, [selectedLocation]);
 
   const handleLocationSelect = (location: string) => {
     setSelectedLocation(location);
-    localStorage.setItem('selectedLocation', location);
     setShowLocationDialog(false);
   };
 

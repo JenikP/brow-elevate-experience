@@ -1,4 +1,7 @@
 import { Phone } from "lucide-react";
+import { useLocationStore } from "../../stores/locationStore";
+import { Button } from "../ui/button";
+import { toast } from "../ui/use-toast";
 
 interface LocationHours {
   [key: string]: string;
@@ -12,6 +15,7 @@ interface Location {
   phone: string;
   hours: LocationHours;
   image: string;
+  storeId: string;
 }
 
 interface LocationCardProps {
@@ -21,7 +25,10 @@ interface LocationCardProps {
 }
 
 const LocationCard = ({ location, isSelected, onClick }: LocationCardProps) => {
-  const handleDirectionsClick = () => {
+  const { setSelectedLocation } = useLocationStore();
+
+  const handleDirectionsClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
     window.open(
       `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
         `${location.name} ${location.address}`
@@ -30,8 +37,18 @@ const LocationCard = ({ location, isSelected, onClick }: LocationCardProps) => {
     );
   };
 
-  const handleCallClick = () => {
+  const handleCallClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
     window.location.href = `tel:${location.phone}`;
+  };
+
+  const handleSelectLocation = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setSelectedLocation(location.storeId);
+    toast({
+      title: "Location Selected",
+      description: `You've selected ${location.name} as your preferred location.`,
+    });
   };
 
   return (
@@ -83,6 +100,14 @@ const LocationCard = ({ location, isSelected, onClick }: LocationCardProps) => {
             ))}
           </div>
         </div>
+
+        <Button 
+          onClick={handleSelectLocation}
+          className="w-full mt-4"
+          variant="outline"
+        >
+          Select This Location
+        </Button>
       </div>
     </div>
   );

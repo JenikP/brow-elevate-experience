@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar";
 const locations = [
   {
     id: 1,
+    storeId: "location1",
     name: "Brandon Park",
     address: "Brandon Park Shopping Center (opposite The Reject Shop)",
     description: "Our friendly shop is designed to maintain your privacy, ensuring a comfortable experience.",
@@ -22,6 +23,7 @@ const locations = [
   },
   {
     id: 2,
+    storeId: "location2",
     name: "Southland",
     address: "Located conveniently at Southland Shopping Center",
     coordinates: { lat: -37.9594, lng: 145.0544 },
@@ -36,6 +38,7 @@ const locations = [
   },
   {
     id: 3,
+    storeId: "location3",
     name: "Pakenham",
     address: "Pakenham Shopping Centre",
     description: "Our kiosk ensures both privacy and quick access to all services.",
@@ -51,6 +54,7 @@ const locations = [
   },
   {
     id: 4,
+    storeId: "location4",
     name: "Stud Park",
     address: "StudPark Shopping Centre (opposite Coles)",
     coordinates: { lat: -37.9082, lng: 145.2305 },
@@ -65,6 +69,7 @@ const locations = [
   },
   {
     id: 5,
+    storeId: "location5",
     name: "Heidelberg",
     address: "Heidelberg Shopping Centre (near TK Maxx)",
     coordinates: { lat: -37.7566, lng: 145.0695 },
@@ -82,7 +87,7 @@ const locations = [
 const Locations = () => {
   const [selectedLocation, setSelectedLocation] = useState<number | null>(null);
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyCqm_04Dum-ER0Tk9zgm2cTfmZzEmAet-8", // Replace with actual API key
+    googleMapsApiKey: "AIzaSyCqm_04Dum-ER0Tk9zgm2cTfmZzEmAet-8",
   });
 
   if (!isLoaded) return <div>Loading...</div>;
