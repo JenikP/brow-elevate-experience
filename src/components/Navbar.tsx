@@ -1,12 +1,24 @@
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleCall = () => {
     window.location.href = "tel:+61123456789";
+  };
+
+  const handleNavigation = (sectionId: string) => {
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: sectionId } });
+    } else {
+      const element = document.getElementById(sectionId);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsOpen(false);
   };
 
   return (
@@ -19,11 +31,21 @@ const Navbar = () => {
           
           {/* Desktop menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#services" className="text-charcoal hover:text-secondary transition-colors">Services</a>
-            <a href="#about" className="text-charcoal hover:text-secondary transition-colors">About</a>
-            <a href="#testimonials" className="text-charcoal hover:text-secondary transition-colors">Testimonials</a>
-            <Link to="/locations" className="text-charcoal hover:text-secondary transition-colors">Locations</Link>
-            <a href="#contact" className="text-charcoal hover:text-secondary transition-colors">Contact</a>
+            <button onClick={() => handleNavigation('services')} className="text-charcoal hover:text-secondary transition-colors">
+              Services
+            </button>
+            <button onClick={() => handleNavigation('about')} className="text-charcoal hover:text-secondary transition-colors">
+              About
+            </button>
+            <button onClick={() => handleNavigation('testimonials')} className="text-charcoal hover:text-secondary transition-colors">
+              Testimonials
+            </button>
+            <Link to="/locations" className="text-charcoal hover:text-secondary transition-colors">
+              Locations
+            </Link>
+            <button onClick={() => handleNavigation('contact')} className="text-charcoal hover:text-secondary transition-colors">
+              Contact
+            </button>
             <button 
               onClick={handleCall}
               className="bg-primary hover:bg-primary-dark text-secondary px-6 py-2 rounded-full transition-colors flex items-center gap-2"
@@ -45,11 +67,21 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <a href="#services" className="block px-3 py-2 text-charcoal hover:text-secondary">Services</a>
-              <a href="#about" className="block px-3 py-2 text-charcoal hover:text-secondary">About</a>
-              <a href="#testimonials" className="block px-3 py-2 text-charcoal hover:text-secondary">Testimonials</a>
-              <Link to="/locations" className="block px-3 py-2 text-charcoal hover:text-secondary">Locations</Link>
-              <a href="#contact" className="block px-3 py-2 text-charcoal hover:text-secondary">Contact</a>
+              <button onClick={() => handleNavigation('services')} className="block w-full text-left px-3 py-2 text-charcoal hover:text-secondary">
+                Services
+              </button>
+              <button onClick={() => handleNavigation('about')} className="block w-full text-left px-3 py-2 text-charcoal hover:text-secondary">
+                About
+              </button>
+              <button onClick={() => handleNavigation('testimonials')} className="block w-full text-left px-3 py-2 text-charcoal hover:text-secondary">
+                Testimonials
+              </button>
+              <Link to="/locations" className="block px-3 py-2 text-charcoal hover:text-secondary">
+                Locations
+              </Link>
+              <button onClick={() => handleNavigation('contact')} className="block w-full text-left px-3 py-2 text-charcoal hover:text-secondary">
+                Contact
+              </button>
               <button 
                 onClick={handleCall}
                 className="w-full mt-4 bg-primary hover:bg-primary-dark text-secondary px-6 py-2 rounded-full flex items-center justify-center gap-2"
