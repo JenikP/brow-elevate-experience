@@ -1,5 +1,9 @@
 import { Phone } from "lucide-react";
+import { useEffect, useState } from "react";
 import ServiceCategory from './services/ServiceCategory';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
+import { useNavigate } from "react-router-dom";
 
 const services = {
   facialThreadingWaxing: [
@@ -7,7 +11,14 @@ const services = {
       title: "Eyebrow Threading/Waxing",
       price: "from $12",
       description: "Precise shaping and hair removal",
-      duration: "15 mins"
+      duration: "15 mins",
+      locationPrices: {
+        "location1": "from $12",
+        "location2": "from $13",
+        "location3": "from $14",
+        "location4": "from $15",
+        "location5": "from $16"
+      }
     },
     {
       title: "Upper Lip",
@@ -51,7 +62,14 @@ const services = {
       title: "Under Arms",
       price: "from $12",
       description: "Smooth underarm hair removal",
-      duration: "15 mins"
+      duration: "15 mins",
+      locationPrices: {
+        "location1": "from $12",
+        "location2": "from $13",
+        "location3": "from $14",
+        "location4": "from $15",
+        "location5": "from $16"
+      }
     },
     {
       title: "Half Arm",
@@ -89,7 +107,14 @@ const services = {
       title: "Eyebrow Tint",
       price: "from $15",
       description: "Enhanced color for fuller-looking brows",
-      duration: "15 mins"
+      duration: "15 mins",
+      locationPrices: {
+        "location1": "from $15",
+        "location2": "from $16",
+        "location3": "from $17",
+        "location4": "from $18",
+        "location5": "from $19"
+      }
     },
     {
       title: "Eyelash Tint",
@@ -121,7 +146,14 @@ const services = {
       title: "Mini Facial",
       price: "from $50",
       description: "Quick refreshing facial treatment",
-      duration: "30 mins"
+      duration: "30 mins",
+      locationPrices: {
+        "location1": "from $50",
+        "location2": "from $55",
+        "location3": "from $60",
+        "location4": "from $65",
+        "location5": "from $70"
+      }
     },
     {
       title: "Full Facial",
@@ -135,7 +167,14 @@ const services = {
       title: "Eyebrow + Upper Lip",
       price: "from $20",
       description: "Popular combo for complete face framing",
-      duration: "25 mins"
+      duration: "25 mins",
+      locationPrices: {
+        "location1": "from $20",
+        "location2": "from $22",
+        "location3": "from $24",
+        "location4": "from $26",
+        "location5": "from $28"
+      }
     },
     {
       title: "Eyebrow Threading & Eyelash Tint",
@@ -152,36 +191,106 @@ const services = {
   ]
 };
 
+const locationNames = {
+  location1: "Downtown Store",
+  location2: "Westside Plaza",
+  location3: "Eastside Mall",
+  location4: "North Center",
+  location5: "South Square"
+};
+
 const Services = () => {
+  const [showLocationDialog, setShowLocationDialog] = useState(true);
+  const [selectedLocation, setSelectedLocation] = useState<string | null>(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const savedLocation = localStorage.getItem('selectedLocation');
+    if (savedLocation) {
+      setSelectedLocation(savedLocation);
+      setShowLocationDialog(false);
+    }
+  }, []);
+
+  const handleLocationSelect = (location: string) => {
+    setSelectedLocation(location);
+    localStorage.setItem('selectedLocation', location);
+    setShowLocationDialog(false);
+  };
+
   const handleCall = () => {
     window.location.href = "tel:+61123456789";
   };
 
+  const handleViewLocations = () => {
+    navigate('/locations');
+  };
+
   return (
-    <section id="services" className="py-20 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-secondary mb-4">Our Services</h2>
-          <p className="text-warmGray max-w-2xl mx-auto">
-            Experience our comprehensive range of professional beauty services, tailored to enhance your natural beauty.
-          </p>
-        </div>
+    <>
+      <Dialog open={showLocationDialog} onOpenChange={setShowLocationDialog}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Select Your Preferred Location</DialogTitle>
+          </DialogHeader>
+          <div className="py-4">
+            <Select onValueChange={handleLocationSelect}>
+              <SelectTrigger>
+                <SelectValue placeholder="Choose a location" />
+              </SelectTrigger>
+              <SelectContent>
+                {Object.entries(locationNames).map(([key, name]) => (
+                  <SelectItem key={key} value={key}>
+                    {name}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <button
+              onClick={handleViewLocations}
+              className="mt-4 text-primary hover:underline w-full text-center"
+            >
+              View All Locations
+            </button>
+          </div>
+        </DialogContent>
+      </Dialog>
 
-        {Object.entries(services).map(([category, items]) => (
-          <ServiceCategory key={category} category={category} items={items} />
-        ))}
+      <section id="services" className="py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-secondary mb-4">Our Services</h2>
+            <p className="text-warmGray max-w-2xl mx-auto">
+              Experience our comprehensive range of professional beauty services, tailored to enhance your natural beauty.
+            </p>
+            {selectedLocation && (
+              <p className="mt-2 text-primary">
+                Showing prices for: {locationNames[selectedLocation as keyof typeof locationNames]}
+              </p>
+            )}
+          </div>
 
-        <div className="text-center mt-12">
-          <button 
-            onClick={handleCall}
-            className="bg-primary hover:bg-primary-dark text-secondary px-8 py-3 rounded-full text-lg transition-colors flex items-center gap-2 mx-auto"
-          >
-            <Phone size={20} />
-            Book Now
-          </button>
+          {Object.entries(services).map(([category, items]) => (
+            <ServiceCategory 
+              key={category} 
+              category={category} 
+              items={items} 
+              selectedLocation={selectedLocation}
+            />
+          ))}
+
+          <div className="text-center mt-12">
+            <button 
+              onClick={handleCall}
+              className="bg-primary hover:bg-primary-dark text-secondary px-8 py-3 rounded-full text-lg transition-colors flex items-center gap-2 mx-auto"
+            >
+              <Phone size={20} />
+              Book Now
+            </button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

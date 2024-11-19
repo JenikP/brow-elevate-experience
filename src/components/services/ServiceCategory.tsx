@@ -7,7 +7,6 @@ interface Service {
   price: string;
   description: string;
   duration: string;
-  image: string;
   locationPrices?: {
     [key: string]: string;
   };
@@ -16,12 +15,10 @@ interface Service {
 interface ServiceCategoryProps {
   category: string;
   items: Service[];
+  selectedLocation: string | null;
 }
 
-const ServiceCategory: FC<ServiceCategoryProps> = ({ category, items }) => {
-  const { pathname } = useLocation();
-  const currentLocation = pathname.split('/')[2]; // Gets location from URL if present
-
+const ServiceCategory: FC<ServiceCategoryProps> = ({ category, items, selectedLocation }) => {
   const getServiceImage = (service: string) => {
     const baseUrl = "https://images.unsplash.com/photo-";
     const images: { [key: string]: string } = {
@@ -40,7 +37,6 @@ const ServiceCategory: FC<ServiceCategoryProps> = ({ category, items }) => {
       "Full Body": "1522337360788-8b13dee7a37e",
       "Mini Facial": "1522337360788-8b13dee7a37e",
       "Full Facial": "1522337360788-8b13dee7a37e",
-      // Add more service-image mappings as needed
     };
     
     return `${baseUrl}${images[service] || images["Eyebrow Threading/Waxing"]}?auto=format&fit=crop&w=800&q=80`;
@@ -56,8 +52,8 @@ const ServiceCategory: FC<ServiceCategoryProps> = ({ category, items }) => {
           <ServiceCard
             key={index}
             {...service}
-            price={currentLocation && service.locationPrices?.[currentLocation] 
-              ? service.locationPrices[currentLocation]
+            price={selectedLocation && service.locationPrices?.[selectedLocation] 
+              ? service.locationPrices[selectedLocation]
               : service.price}
             image={getServiceImage(service.title)}
           />
