@@ -1,4 +1,4 @@
-import { Phone } from "lucide-react";
+import { Phone, MapPin, Check } from "lucide-react";
 import { useLocationStore } from "../../stores/locationStore";
 import { Button } from "../ui/button";
 import { toast } from "../ui/use-toast";
@@ -53,10 +53,16 @@ const LocationCard = ({ location, isSelected, onClick }: LocationCardProps) => {
 
   return (
     <div
-      className={`bg-white rounded-lg shadow-md overflow-hidden transition-all cursor-pointer
+      className={`bg-white rounded-lg shadow-md overflow-hidden transition-all cursor-pointer relative
         ${isSelected ? "ring-2 ring-primary scale-[1.02]" : "hover:scale-[1.01]"}`}
       onClick={onClick}
     >
+      {isSelected && (
+        <div className="absolute top-4 right-4 bg-primary text-secondary p-2 rounded-full z-10">
+          <Check size={20} />
+        </div>
+      )}
+      
       <div className="h-48 w-full">
         <img 
           src={location.image} 
@@ -103,10 +109,10 @@ const LocationCard = ({ location, isSelected, onClick }: LocationCardProps) => {
 
         <Button 
           onClick={handleSelectLocation}
-          className="w-full mt-4"
-          variant="outline"
+          className={`w-full mt-4 ${isSelected ? 'bg-primary text-secondary hover:bg-primary-dark' : ''}`}
+          variant={isSelected ? "default" : "outline"}
         >
-          Select This Location
+          {isSelected ? 'Selected Location' : 'Select This Location'}
         </Button>
       </div>
     </div>
