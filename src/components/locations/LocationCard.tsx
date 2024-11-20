@@ -1,7 +1,7 @@
 import { Phone, MapPin, Check } from "lucide-react";
 import { useLocationStore } from "../../stores/locationStore";
 import { Button } from "../ui/button";
-import { toast } from "../ui/use-toast";
+import { toast } from "sonner";
 
 interface LocationHours {
   [key: string]: string;
@@ -29,26 +29,43 @@ const LocationCard = ({ location, isSelected, onClick }: LocationCardProps) => {
 
   const handleDirectionsClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    window.open(
-      `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-        `${location.name} ${location.address}`
-      )}`,
-      "_blank"
-    );
+    try {
+      window.open(
+        `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+          `${location.name} ${location.address}`
+        )}`,
+        "_blank"
+      );
+    } catch (error) {
+      toast.error("Navigation Error", {
+        description: "Failed to open directions. Please try again."
+      });
+    }
   };
 
   const handleCallClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    window.location.href = `tel:${location.phone}`;
+    try {
+      window.location.href = `tel:${location.phone}`;
+    } catch (error) {
+      toast.error("Call Error", {
+        description: "Failed to initiate call. Please try again."
+      });
+    }
   };
 
   const handleSelectLocation = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setSelectedLocation(location.storeId);
-    toast({
-      title: "Location Selected",
-      description: `You've selected ${location.name} as your preferred location.`,
-    });
+    try {
+      setSelectedLocation(location.storeId);
+      toast.success("Location Selected", {
+        description: `You've selected ${location.name} as your preferred location.`
+      });
+    } catch (error) {
+      toast.error("Selection Error", {
+        description: "Failed to select location. Please try again."
+      });
+    }
   };
 
   return (

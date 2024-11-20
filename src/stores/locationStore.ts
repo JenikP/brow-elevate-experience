@@ -4,23 +4,38 @@ import { toast } from "sonner";
 interface LocationStore {
   selectedLocation: string | null;
   isLoading: boolean;
+  error: string | null;
   setSelectedLocation: (location: string) => void;
   setLoading: (loading: boolean) => void;
+  setError: (error: string | null) => void;
 }
 
 export const useLocationStore = create<LocationStore>((set) => ({
   selectedLocation: null,
   isLoading: false,
+  error: null,
   setSelectedLocation: (location) => {
-    set({ isLoading: true });
+    set({ isLoading: true, error: null });
     
-    // Simulate API call to validate location
-    setTimeout(() => {
-      set({ selectedLocation: location, isLoading: false });
-      toast.success("Location updated successfully!", {
-        description: "Your preferred location has been saved.",
+    try {
+      // Simulate API call to validate location
+      setTimeout(() => {
+        if (!location) {
+          throw new Error("Invalid location selected");
+        }
+        
+        set({ selectedLocation: location, isLoading: false });
+        toast.success("Location updated successfully!", {
+          description: "Your preferred location has been saved.",
+        });
+      }, 500);
+    } catch (error) {
+      set({ error: error instanceof Error ? error.message : "An error occurred", isLoading: false });
+      toast.error("Failed to update location", {
+        description: error instanceof Error ? error.message : "An error occurred",
       });
-    }, 500);
+    }
   },
   setLoading: (loading) => set({ isLoading: loading }),
+  setError: (error) => set({ error })
 }));

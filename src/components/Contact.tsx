@@ -2,7 +2,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useState, useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from '@emailjs/browser';
-import { toast } from "./ui/use-toast";
+import { toast } from "sonner";
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -14,29 +14,35 @@ const Contact = () => {
     e.preventDefault();
     
     if (!captchaValue) {
-      toast({
-        title: "Verification Required",
-        description: "Please complete the captcha verification",
-        variant: "destructive"
+      toast.error("Verification Required", {
+        description: "Please complete the captcha verification"
       });
       return;
     }
 
-    if (!formRef.current) return;
+    if (!formRef.current) {
+      toast.error("Form Error", {
+        description: "Please try again"
+      });
+      return;
+    }
 
     setIsSubmitting(true);
     
     try {
-      await emailjs.sendForm(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+      const response = await emailjs.sendForm(
+        'YOUR_SERVICE_ID',
+        'YOUR_TEMPLATE_ID',
         formRef.current,
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+        'YOUR_PUBLIC_KEY'
       );
 
-      toast({
-        title: "Success!",
-        description: "Your message has been sent successfully.",
+      if (response.status !== 200) {
+        throw new Error("Failed to send message");
+      }
+
+      toast.success("Success!", {
+        description: "Your message has been sent successfully."
       });
 
       if (formRef.current) {
@@ -47,10 +53,8 @@ const Contact = () => {
       }
       setCaptchaValue(null);
     } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again later.",
-        variant: "destructive"
+      toast.error("Error", {
+        description: error instanceof Error ? error.message : "Failed to send message. Please try again later."
       });
     } finally {
       setIsSubmitting(false);

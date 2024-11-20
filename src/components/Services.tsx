@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 import { useNavigate } from "react-router-dom";
 import { useLocationStore } from "../stores/locationStore";
+import { toast } from "sonner";
 
 const services = {
   facialThreadingWaxing: [
@@ -202,7 +203,7 @@ const locationNames = {
 
 const Services = () => {
   const [showLocationDialog, setShowLocationDialog] = useState(true);
-  const { selectedLocation, setSelectedLocation } = useLocationStore();
+  const { selectedLocation, setSelectedLocation, isLoading, error } = useLocationStore();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -211,9 +212,26 @@ const Services = () => {
     }
   }, [selectedLocation]);
 
+  useEffect(() => {
+    if (error) {
+      toast.error("Location Error", {
+        description: error
+      });
+    }
+  }, [error]);
+
   const handleLocationSelect = (location: string) => {
-    setSelectedLocation(location);
-    setShowLocationDialog(false);
+    try {
+      if (!location) {
+        throw new Error("Please select a valid location");
+      }
+      setSelectedLocation(location);
+      setShowLocationDialog(false);
+    } catch (error) {
+      toast.error("Selection Error", {
+        description: error instanceof Error ? error.message : "Failed to select location"
+      });
+    }
   };
 
   const handleCall = () => {
