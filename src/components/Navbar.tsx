@@ -38,7 +38,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
+    <nav className="fixed w-full bg-white shadow-sm z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
@@ -64,15 +64,17 @@ const Navbar = () => {
             </button>
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center space-x-2 text-charcoal hover:text-secondary transition-colors">
+              <DropdownMenuTrigger className="flex items-center space-x-2 px-3 py-1.5 rounded-md bg-white border-2 border-primary/20 hover:border-primary text-charcoal hover:text-secondary transition-colors">
                 <MapPin size={18} />
                 <span>{selectedLocation ? locationNames[selectedLocation as keyof typeof locationNames] : "Select Location"}</span>
               </DropdownMenuTrigger>
-              <DropdownMenuContent>
+              <DropdownMenuContent className="bg-white border-2 border-primary/20">
                 {Object.entries(locationNames).map(([key, name]) => (
                   <DropdownMenuItem
                     key={key}
-                    className={`cursor-pointer ${selectedLocation === key ? 'bg-primary/10' : ''}`}
+                    className={`cursor-pointer hover:bg-primary/10 ${
+                      selectedLocation === key ? 'bg-primary/10 font-medium text-secondary' : ''
+                    }`}
                     onClick={() => setSelectedLocation(key)}
                   >
                     {name}

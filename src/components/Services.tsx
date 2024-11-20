@@ -227,18 +227,22 @@ const Services = () => {
   return (
     <>
       <Dialog open={showLocationDialog} onOpenChange={setShowLocationDialog}>
-        <DialogContent>
+        <DialogContent className="bg-white">
           <DialogHeader>
-            <DialogTitle>Select Your Preferred Location</DialogTitle>
+            <DialogTitle className="text-xl font-semibold text-secondary">Select Your Preferred Location</DialogTitle>
           </DialogHeader>
           <div className="py-4">
             <Select onValueChange={handleLocationSelect}>
-              <SelectTrigger>
+              <SelectTrigger className="bg-white border-2 border-primary/20 focus:border-primary focus:ring-1 focus:ring-primary">
                 <SelectValue placeholder="Choose a location" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-white">
                 {Object.entries(locationNames).map(([key, name]) => (
-                  <SelectItem key={key} value={key}>
+                  <SelectItem 
+                    key={key} 
+                    value={key}
+                    className="hover:bg-primary/10 focus:bg-primary/10 cursor-pointer"
+                  >
                     {name}
                   </SelectItem>
                 ))}
@@ -246,7 +250,7 @@ const Services = () => {
             </Select>
             <button
               onClick={handleViewLocations}
-              className="mt-4 text-primary hover:underline w-full text-center"
+              className="mt-4 text-primary hover:text-primary-dark hover:underline w-full text-center font-medium"
             >
               View All Locations
             </button>
