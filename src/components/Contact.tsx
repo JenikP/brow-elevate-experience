@@ -1,6 +1,62 @@
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { useState, useRef } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import emailjs from '@emailjs/browser';
+import { toast } from "./ui/use-toast";
 
 const Contact = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [captchaValue, setCaptchaValue] = useState<string | null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!captchaValue) {
+      toast({
+        title: "Verification Required",
+        description: "Please complete the captcha verification",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    if (!formRef.current) return;
+
+    setIsSubmitting(true);
+    
+    try {
+      await emailjs.sendForm(
+        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        formRef.current,
+        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+      );
+
+      toast({
+        title: "Success!",
+        description: "Your message has been sent successfully.",
+      });
+
+      if (formRef.current) {
+        formRef.current.reset();
+      }
+      if (recaptchaRef.current) {
+        recaptchaRef.current.reset();
+      }
+      setCaptchaValue(null);
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-20 bg-pearl">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -54,11 +110,13 @@ const Contact = () => {
           
           <div className="bg-white p-8 rounded-lg shadow-lg">
             <h3 className="text-2xl font-bold text-secondary mb-6">Send Us a Message</h3>
-            <form className="space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-warmGray mb-2">Name</label>
                 <input
+                  name="user_name"
                   type="text"
+                  required
                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-primary"
                   placeholder="Your name"
                 />
@@ -67,7 +125,9 @@ const Contact = () => {
               <div>
                 <label className="block text-warmGray mb-2">Email</label>
                 <input
+                  name="user_email"
                   type="email"
+                  required
                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-primary"
                   placeholder="Your email"
                 />
@@ -76,16 +136,27 @@ const Contact = () => {
               <div>
                 <label className="block text-warmGray mb-2">Message</label>
                 <textarea
+                  name="message"
+                  required
                   className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-primary h-32"
                   placeholder="Your message"
                 ></textarea>
               </div>
+
+              <div className="flex justify-center">
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey="YOUR_RECAPTCHA_SITE_KEY" // Replace with your reCAPTCHA site key
+                  onChange={(value) => setCaptchaValue(value)}
+                />
+              </div>
               
               <button
                 type="submit"
-                className="w-full bg-secondary hover:bg-secondary-light text-white px-6 py-3 rounded-full transition-colors"
+                disabled={isSubmitting || !captchaValue}
+                className="w-full bg-secondary hover:bg-secondary-light text-white px-6 py-3 rounded-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
             </form>
           </div>
