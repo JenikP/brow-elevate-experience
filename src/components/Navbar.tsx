@@ -8,6 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
+import LoadingSpinner from "./ui/loading-spinner";
 
 const locationNames = {
   location1: "Brandon Park",
@@ -21,7 +22,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const { selectedLocation, setSelectedLocation } = useLocationStore();
+  const { selectedLocation, setSelectedLocation, isLoading } = useLocationStore();
 
   const handleCall = () => {
     window.location.href = "tel:+61123456789";
@@ -64,9 +65,18 @@ const Navbar = () => {
             </button>
 
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center space-x-2 px-3 py-1.5 rounded-md bg-white border-2 border-primary/20 hover:border-primary text-charcoal hover:text-secondary transition-colors">
-                <MapPin size={18} />
-                <span>{selectedLocation ? locationNames[selectedLocation as keyof typeof locationNames] : "Select Location"}</span>
+              <DropdownMenuTrigger 
+                className="flex items-center space-x-2 px-3 py-1.5 rounded-md bg-white border-2 border-primary/20 hover:border-primary text-charcoal hover:text-secondary transition-colors"
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <LoadingSpinner />
+                ) : (
+                  <>
+                    <MapPin size={18} />
+                    <span>{selectedLocation ? locationNames[selectedLocation as keyof typeof locationNames] : "Select Location"}</span>
+                  </>
+                )}
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white border-2 border-primary/20">
                 {Object.entries(locationNames).map(([key, name]) => (
@@ -92,7 +102,7 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu */}
           <div className="md:hidden flex items-center space-x-4">
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center space-x-2 text-charcoal">

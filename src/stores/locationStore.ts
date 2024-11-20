@@ -1,33 +1,26 @@
-import { useEffect, useState } from 'react';
+import { create } from 'zustand';
+import { toast } from "sonner";
 
-type LocationStore = {
+interface LocationStore {
   selectedLocation: string | null;
+  isLoading: boolean;
   setSelectedLocation: (location: string) => void;
-};
+  setLoading: (loading: boolean) => void;
+}
 
-let listeners: (() => void)[] = [];
-let currentLocation = localStorage.getItem('selectedLocation');
-
-const locationStore: LocationStore = {
-  selectedLocation: currentLocation,
-  setSelectedLocation: (location: string) => {
-    currentLocation = location;
-    localStorage.setItem('selectedLocation', location);
-    locationStore.selectedLocation = location;
-    listeners.forEach(listener => listener());
-  }
-};
-
-export const useLocationStore = () => {
-  const [, setUpdate] = useState({});
-
-  useEffect(() => {
-    const listener = () => setUpdate({});
-    listeners.push(listener);
-    return () => {
-      listeners = listeners.filter(l => l !== listener);
-    };
-  }, []);
-
-  return locationStore;
-};
+export const useLocationStore = create<LocationStore>((set) => ({
+  selectedLocation: null,
+  isLoading: false,
+  setSelectedLocation: (location) => {
+    set({ isLoading: true });
+    
+    // Simulate API call to validate location
+    setTimeout(() => {
+      set({ selectedLocation: location, isLoading: false });
+      toast.success("Location updated successfully!", {
+        description: "Your preferred location has been saved.",
+      });
+    }, 500);
+  },
+  setLoading: (loading) => set({ isLoading: loading }),
+}));
