@@ -31,10 +31,10 @@ const Contact = () => {
     
     try {
       const response = await emailjs.sendForm(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        'service_xxxxxxx', // Replace with your EmailJS service ID
+        'template_xxxxxxx', // Replace with your EmailJS template ID
         formRef.current,
-        'YOUR_PUBLIC_KEY'
+        'public_key_xxxxxxx' // Replace with your EmailJS public key
       );
 
       if (response.status !== 200) {
@@ -150,7 +150,7 @@ const Contact = () => {
               <div className="flex justify-center">
                 <ReCAPTCHA
                   ref={recaptchaRef}
-                  sitekey="YOUR_RECAPTCHA_SITE_KEY" // Replace with your reCAPTCHA site key
+                  sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" // Replace with your reCAPTCHA site key
                   onChange={(value) => setCaptchaValue(value)}
                 />
               </div>
