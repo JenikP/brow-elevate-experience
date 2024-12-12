@@ -78,8 +78,8 @@ const Contact = () => {
               <div className="flex items-start space-x-4">
                 <MapPin className="w-6 h-6 text-primary-dark mt-1" />
                 <div>
-                  <h3 className="font-semibold text-secondary">Location</h3>
-                  <p className="text-warmGray">123 Beauty Lane, Suite 100<br />Your City, ST 12345</p>
+                  <h3 className="font-semibold text-secondary">Our Locations Are</h3>
+                  <p className="text-warmGray">Brandon Park Shopping Centre<br />Stud Park Shopping Centre<be />Pakenham Central Marketplace<br />Southland Shopping Centre<br />Warringal Shopping Centre</p>
                 </div>
               </div>
               
@@ -87,7 +87,7 @@ const Contact = () => {
                 <Phone className="w-6 h-6 text-primary-dark mt-1" />
                 <div>
                   <h3 className="font-semibold text-secondary">Phone</h3>
-                  <p className="text-warmGray">(555) 123-4567</p>
+                  <p className="text-warmGray">(+61)451-196-959</p>
                 </div>
               </div>
               
@@ -95,17 +95,19 @@ const Contact = () => {
                 <Mail className="w-6 h-6 text-primary-dark mt-1" />
                 <div>
                   <h3 className="font-semibold text-secondary">Email</h3>
-                  <p className="text-warmGray">info@browarcthreading.com</p>
+                  <p className="text-warmGray">browarcthreading@yahoo.com</p>
                 </div>
               </div>
               
               <div className="flex items-start space-x-4">
                 <Clock className="w-6 h-6 text-primary-dark mt-1" />
                 <div>
-                  <h3 className="font-semibold text-secondary">Hours</h3>
+                  <h3 className="font-semibold text-secondary">Hours Are Different Depending on Location</h3>
                   <p className="text-warmGray">
-                    Monday - Saturday: 10:00 AM - 8:00 PM<br />
-                    Sunday: 11:00 AM - 6:00 PM
+                    Monday - Wednesday: 9:00 AM - 5:30 PM<br />
+                    Thursday - Friday: 9:00 AM - 7:00 PM<br />
+                    Saturday: 9:00 AM – 5:00 AM
+                    Sunday: 9:00 AM - 5:00 PM
                   </p>
                 </div>
               </div>
