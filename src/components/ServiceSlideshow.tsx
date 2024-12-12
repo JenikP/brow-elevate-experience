@@ -12,17 +12,17 @@ const services = [
   {
     title: "Eyebrow Threading",
     description: "Expert shaping and definition for your brows",
-    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e"
+    image: "https://media.istockphoto.com/id/1210999190/photo/eyebrow-threading-macro.jpg?s=612x612&w=0&k=20&c=E8clbQve_mdCyOFqbSYv7SO6pdHNle7Qp_xq50Kyd60="
   },
   {
     title: "Facial Threading",
     description: "Gentle hair removal for a smoother complexion",
-    image: "https://images.unsplash.com/photo-1560750588-73207b1ef5b8"
+    image: "https://media.istockphoto.com/id/1060643400/photo/beautiful-young-woman-with-healthy-clean-skin-waxing-epilation-threading-hair-removal-cream.jpg?s=612x612&w=0&k=20&c=CdBjtGFBiQQYqrZ8jQOkO6NPaS9jbDDdcY_Wmhy3zuo="
   },
   {
     title: "Body Waxing",
     description: "Professional waxing services for lasting smoothness",
-    image: "https://images.unsplash.com/photo-1598524374912-6b0b0bdd5e4e"
+    image: "https://media.istockphoto.com/id/1226105739/photo/close-up-photo-of-a-sugaring-procedure-done-at-the-salon-during-a-leg-skin-protection-session.jpg?s=612x612&w=0&k=20&c=aDP_J72jwDzBxNcHw0EKRIozeLpkcmH5HfwvYlbGLZg="
   },
   {
     title: "Beauty Add-Ons",
