@@ -79,7 +79,7 @@ const Contact = () => {
                 <MapPin className="w-6 h-6 text-primary-dark mt-1" />
                 <div>
                   <h3 className="font-semibold text-secondary">Our Locations Are</h3>
-                  <p className="text-warmGray">Brandon Park Shopping Centre<br />Stud Park Shopping Centre<be />Pakenham Central Marketplace<br />Southland Shopping Centre<br />Warringal Shopping Centre</p>
+                  <p className="text-warmGray">Brandon Park Shopping Centre<br />Stud Park Shopping Centre<br />Pakenham Central Marketplace<br />Southland Shopping Centre<br />Warringal Shopping Centre</p>
                 </div>
               </div>
               
@@ -106,7 +106,7 @@ const Contact = () => {
                   <p className="text-warmGray">
                     Monday - Wednesday: 9:00 AM - 5:30 PM<br />
                     Thursday - Friday: 9:00 AM - 7:00 PM<br />
-                    Saturday: 9:00 AM – 5:00 AM
+                    Saturday: 9:00 AM – 5:00 AM<br />
                     Sunday: 9:00 AM - 5:00 PM
                   </p>
                 </div>
