@@ -12,7 +12,7 @@ const About = () => {
               />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-primary p-6 rounded-lg">
-              <p className="text-secondary font-bold text-xl">10+ Years</p>
+              <p className="text-secondary font-bold text-xl">15+ Years</p>
               <p className="text-secondary-light">of Experience</p>
             </div>
           </div>
@@ -22,12 +22,14 @@ const About = () => {
               Your Beauty, Our Expertise
             </h2>
             <p className="text-warmGray mb-6">
-              Since 2014, Brow Arc Threading has been the premier destination for 
-              exceptional high-quality beauty services. Our skilled professionals combine ancient techniques with modern precision to deliver results that enhance your natural beauty.
+              Since 2005, Brow Arc Threading has been the premier destination for 
+              exceptional threading services. Our skilled professionals combine ancient 
+              techniques with modern precision to deliver results that enhance your 
+              natural beauty.
             </p>
             <div className="grid grid-cols-2 gap-6 mb-8">
               <div>
-                <p className="text-2xl font-bold text-secondary">50000+</p>
+                <p className="text-2xl font-bold text-secondary">5000+</p>
                 <p className="text-warmGray">Happy Clients</p>
               </div>
               <div>
