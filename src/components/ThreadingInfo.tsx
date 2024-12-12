@@ -13,7 +13,7 @@ const ThreadingInfo = () => {
           </p>
           <div className="mt-12">
             <img 
-              src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e" 
+              src="https://media.istockphoto.com/photos/eyebrow-threading-epilation-procedure-for-brow-shape-correction-picture-id1189794702?k=20&m=1189794702&s=612x612&w=0&h=1xl8fgpCkMk88SVyfPgdOJRtG23yCjFNXHl8fayi7Ys=" 
               alt="Eyebrow Threading Demonstration" 
               className="rounded-xl shadow-lg mx-auto max-w-full h-auto"
             />
