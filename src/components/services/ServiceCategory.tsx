@@ -20,11 +20,11 @@ interface ServiceCategoryProps {
 
 const ServiceCategory: FC<ServiceCategoryProps> = ({ category, items, selectedLocation }) => {
   const getServiceImage = (service: string) => {
-    const baseUrl = "https://images.unsplash.com/photo-";
+    const baseUrl = "https://media.istockphoto.com/photos/";
     const images: { [key: string]: string } = {
-      "Eyebrow Threading/Waxing": "1522337360788-8b13dee7a37e",
-      "Upper Lip": "1522337360788-8b13dee7a37e",
-      "Forehead": "1522337360788-8b13dee7a37e",
+      "Eyebrow Threading/Waxing": "applying-gold-colored-wax-with-spatula-on-womans-face-stock-photo.jpg?s=612x612&w=0&k=20&c=5foFCtmRPF-SWRmcOn8MpNZCnEM4KIgvbyN6sRqtnKQ=",
+      "Upper Lip": "therapist-waxing-womans-upper-lip.jpg?s=612x612&w=0&k=20&c=_HVVmbTzVMuhpOQD1ZpLteJQdX4Yf5fJL1oFn3mohXg=",
+      "Forehead": "/eyebrow-threading-epilation-procedure-for-brow-shape-correction.jpg?s=612x612&w=0&k=20&c=ql2jQHMHAYhUxEMcP0RLVujWbCnHgjoRqWSvkBmS_G4=",
       "Chin": "1522337360788-8b13dee7a37e",
       "Side Burns": "1522337360788-8b13dee7a37e",
       "Neck": "1522337360788-8b13dee7a37e",
