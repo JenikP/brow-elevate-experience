@@ -13,7 +13,7 @@ const ServiceDetails = ({ title, price, description, duration }: ServiceDetailsP
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className="space-y-2 p-6 bg-white/95 rounded-lg shadow-lg"
+      className="h-full space-y-2 p-6 bg-white/95"
     >
       <h4 className="text-xl font-semibold text-secondary">{title}</h4>
       <p className="text-sm text-warmGray">{description}</p>
