@@ -11,7 +11,7 @@ export const comboOffers = [
       "location4": "from $26",
       "location5": "from $28"
     },
-    image: "https://media.istockphoto.com/id/1219595426/photo/applying-gold-colored-wax-with-spatula-on-womans-face-stock-photo.jpg?s=612x612&w=0&k=20&c=5foFCtmRPF-SWRmcOn8MpNZCnEM4KIgvbyN6sRqtnKQ="
+    image: "https://t3.ftcdn.net/jpg/02/98/50/36/240_F_298503634_v997pWBDrDjCGdEYQdoXThR7o0tgFwn1.jpg"
   },
   {
     title: "Eyebrow Threading & Eyelash Tint",
