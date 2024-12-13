@@ -18,6 +18,6 @@ export const facial = [
     price: "from $80",
     description: "Complete facial treatment for ultimate rejuvenation",
     duration: "60 mins",
-    image: "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=800&q=80"
+    image: "https://t3.ftcdn.net/jpg/08/74/09/20/240_F_874092052_tyNQTd1VKpLnMF8FjGGTQMSJgechEHSK.jpg"
   }
 ];
