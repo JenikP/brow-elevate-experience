@@ -74,7 +74,7 @@ const locations = [
     address: "Heidelberg Shopping Centre (near TK Maxx)",
     coordinates: { lat: -37.7566, lng: 145.0695 },
     phone: "+61123456789",
-    image: "/lovable-uploads/be1d5379-00de-4e16-8773-9c34dc7841a9.png",
+    image: "/lovable-uploads/warringal.png",
     hours: {
       "Monday – Wednesday": "9:00 am – 5:30 pm",
       "Thursday – Friday": "9:00 am – 7:00 pm",
