@@ -37,9 +37,9 @@ const ServiceCategory: FC<ServiceCategoryProps> = ({ category, items, selectedLo
       "Full Arm": "https://t4.ftcdn.net/jpg/06/09/83/29/240_F_609832959_84ZzrkR1fQVghlKpiJORBESB6ugbjt0k.jpg",
       "Half Leg": "https://t3.ftcdn.net/jpg/01/44/24/88/240_F_144248813_1PduH2CEnX2mdR9UpVNerzZs6Kv64qsw.jpg",
       "Full Leg": "https://t4.ftcdn.net/jpg/03/59/71/67/240_F_359716770_wbrpDj2nmWCo5pQWG06HvXS7r10S51rs.jpg",
-      "Full Body": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
-      "Mini Facial": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
-      "Full Facial": "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80"
+      "Full Body": "https://t4.ftcdn.net/jpg/04/64/67/01/240_F_464670170_zmkaTyJxOmLIgq8GwwJrf3XQ4COJa9i8.jpg",
+      "Mini Facial": "https://t3.ftcdn.net/jpg/01/92/98/42/240_F_192984281_jF619bZ4SwP0IgyCT5nPnQrpYi6dXQt7.jpg",
+      "Full Facial": "https://t3.ftcdn.net/jpg/08/74/09/20/240_F_874092052_tyNQTd1VKpLnMF8FjGGTQMSJgechEHSK.jpg"
     };
     
     return images[service] || images["Eyebrow Threading/Waxing"];
