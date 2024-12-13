@@ -10,6 +10,7 @@ interface Service {
   locationPrices?: {
     [key: string]: string;
   };
+  image?: string;
 }
 
 interface ServiceCategoryProps {
@@ -19,15 +20,17 @@ interface ServiceCategoryProps {
 }
 
 const ServiceCategory: FC<ServiceCategoryProps> = ({ category, items, selectedLocation }) => {
-  const getServiceImage = (service: string) => {
+  const getServiceImage = (service: Service) => {
+    // If the service has its own image, use that first
+    if (service.image) {
+      return service.image;
+    }
+
+    // Fallback images if no specific image is provided
     const images: { [key: string]: string } = {
       "Eyebrow Threading/Waxing": "https://media.istockphoto.com/id/1219595426/photo/applying-gold-colored-wax-with-spatula-on-womans-face-stock-photo.jpg?s=612x612&w=0&k=20&c=5foFCtmRPF-SWRmcOn8MpNZCnEM4KIgvbyN6sRqtnKQ=",
       "Upper Lip": "https://media.istockphoto.com/id/1075627666/photo/therapist-waxing-womans-upper-lip.jpg?s=612x612&w=0&k=20&c=_HVVmbTzVMuhpOQD1ZpLteJQdX4Yf5fJL1oFn3mohXg=",
       "Forehead": "https://media.istockphoto.com/id/1083288278/photo/eyebrow-threading-epilation-procedure-for-brow-shape-correction.jpg?s=612x612&w=0&k=20&c=ql2jQHMHAYhUxEMcP0RLVujWbCnHgjoRqWSvkBmS_G4=",
-      "Eyebrow Tint": "https://media.istockphoto.com/photos/closeup-photo-of-beautician-applying-dye-on-womans-eyebrows-stock-picture-id1219595404?k=20&m=1219595404&s=612x612&w=0&h=wcuXUOQKr1U_hxnSHeuXS-7eiQouwAc3raDogCMLGO8=",
-      "Eyelash Lift": "https://media.istockphoto.com/photos/beauty-treatment-curling-eyelashes-by-using-a-curler-lash-lamination-picture-id1074129756?k=20&m=1074129756&s=612x612&w=0&h=ZhMKMFDf2QMWzfxgNXANoU2EfMQqD8oHYOThfzevwbA=",
-      "Eyebrow Henna": "https://media.istockphoto.com/photos/when-words-cant-express-try-henna-picture-id1175414251?k=20&m=1175414251&s=612x612&w=0&h=OeS2QqzBtY1QkZ3eG4e4JTHi-SFkj3nW7De8R3-95Rg=",
-      // Default images for other services
       "Chin": "https://media.istockphoto.com/id/163736832/photo/beauty-salon.jpg?s=612x612&w=0&k=20&c=RntBzJuayNaeSmw1LKvjVTAIJbYxWPfhIwBwr4dlHUc=",
       "Side Burns": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ9Y2dap4fCVeOlNyl-fkKG9n5S1hxQM5KrGyB13vw6st3Y8QHe",
       "Neck": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJFxDPe1aUQJbTQMhmrWVM1teqvRxTOR2zuuByODTmi8MIkLFmYT3TFyYj7PdGCgLqcCo&usqp=CAU",
@@ -42,7 +45,7 @@ const ServiceCategory: FC<ServiceCategoryProps> = ({ category, items, selectedLo
       "Full Facial": "https://t3.ftcdn.net/jpg/08/74/09/20/240_F_874092052_tyNQTd1VKpLnMF8FjGGTQMSJgechEHSK.jpg"
     };
     
-    return images[service] || images["Eyebrow Threading/Waxing"];
+    return images[service.title] || images["Eyebrow Threading/Waxing"];
   };
 
   return (
@@ -58,7 +61,7 @@ const ServiceCategory: FC<ServiceCategoryProps> = ({ category, items, selectedLo
             price={selectedLocation && service.locationPrices?.[selectedLocation] 
               ? service.locationPrices[selectedLocation]
               : service.price}
-            image={getServiceImage(service.title)}
+            image={getServiceImage(service)}
           />
         ))}
       </div>
