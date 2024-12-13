@@ -13,7 +13,7 @@ const locations = [
     description: "Our friendly shop is designed to maintain your privacy, ensuring a comfortable experience.",
     coordinates: { lat: -37.9007, lng: 145.1618 },
     phone: "+61123456789",
-    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
+    image: "/lovable-uploads/4a6d259e-2c69-4327-9302-2fd3265a87cc.png",
     hours: {
       "Monday – Wednesday": "9:00 am – 5:30 pm",
       "Thursday – Friday": "9:00 am – 7:00 pm",
@@ -28,7 +28,7 @@ const locations = [
     address: "Located conveniently at Southland Shopping Center",
     coordinates: { lat: -37.9594, lng: 145.0544 },
     phone: "+61123456789",
-    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
+    image: "/lovable-uploads/7a21f579-60ff-4e22-8b2f-842740b8344c.png",
     hours: {
       "Monday – Wednesday": "9:00 am – 5:30 pm",
       "Thursday – Friday": "9:00 am – 7:00 pm",
@@ -44,7 +44,7 @@ const locations = [
     description: "Our kiosk ensures both privacy and quick access to all services.",
     coordinates: { lat: -38.0755, lng: 145.4845 },
     phone: "+61123456789",
-    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
+    image: "/lovable-uploads/b00dd5a9-7c39-4752-aea4-ca3ebb458783.png",
     hours: {
       "Monday – Wednesday": "9:00 am – 5:30 pm",
       "Thursday – Friday": "9:00 am – 7:00 pm",
@@ -59,7 +59,7 @@ const locations = [
     address: "StudPark Shopping Centre (opposite Coles)",
     coordinates: { lat: -37.9082, lng: 145.2305 },
     phone: "+61123456789",
-    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
+    image: "/lovable-uploads/dc9795c0-3c3a-4a66-99fc-7aa4e2490b74.png",
     hours: {
       "Monday – Wednesday": "9:00 am – 5:30 pm",
       "Thursday – Friday": "9:00 am – 7:00 pm",
@@ -74,7 +74,7 @@ const locations = [
     address: "Heidelberg Shopping Centre (near TK Maxx)",
     coordinates: { lat: -37.7566, lng: 145.0695 },
     phone: "+61123456789",
-    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80",
+    image: "/lovable-uploads/be1d5379-00de-4e16-8773-9c34dc7841a9.png",
     hours: {
       "Monday – Wednesday": "9:00 am – 5:30 pm",
       "Thursday – Friday": "9:00 am – 7:00 pm",
