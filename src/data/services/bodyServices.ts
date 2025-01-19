@@ -1,48 +1,41 @@
 export const bodyWaxing = [
   {
     title: "Under Arms",
-    price: "from $12",
     description: "Smooth underarm hair removal",
-    duration: "15 mins",
-    locationPrices: {
-      "location1": "from $12",
-      "location2": "from $13",
-      "location3": "from $14",
-      "location4": "from $15",
-      "location5": "from $16"
-    },
+     price: "from $15",
   },
   {
     title: "Half Arm",
-    price: "from $22",
+     price: "from $25",
     description: "Partial arm waxing service",
-    duration: "20 mins",
 
   },
   {
     title: "Full Arm",
-    price: "from $30",
+     price: "from $35",
     description: "Complete arm waxing treatment",
-    duration: "30 mins",
 
   },
   {
     title: "Half Leg",
-    price: "from $28",
+    locationPrices: {
+      "location1": "from $35",
+      "location2": "from $30",
+      "location3": "from $35",
+      "location4": "from $35",
+      "location5": "from $35"
+    },
     description: "Partial leg waxing service",
-    duration: "25 mins",
   
   },
   {
     title: "Full Leg",
-    price: "from $40",
+    price: "from $45",
     description: "Complete leg waxing treatment",
-    duration: "45 mins",
   },
   {
     title: "Full Body",
-    price: "from $220",
+    price: "from $250",
     description: "Complete body waxing package",
-    duration: "120 mins",
   }
 ];
