@@ -1,15 +1,14 @@
 export const beautyAddOns = [
   {
     title: "Eyebrow Tint",
-    price: "from $15",
     description: "Enhanced color for fuller-looking brows",
     duration: "15 mins",
     locationPrices: {
-      "location1": "from $15",
-      "location2": "from $16",
+      "location1": "from $17",
+      "location2": "from $15",
       "location3": "from $17",
-      "location4": "from $18",
-      "location5": "from $19"
+      "location4": "from $17",
+      "location5": "from $18"
     },
     image: "https://media.istockphoto.com/photos/closeup-photo-of-beautician-applying-dye-on-womans-eyebrows-stock-picture-id1219595404?k=20&m=1219595404&s=612x612&w=0&h=wcuXUOQKr1U_hxnSHeuXS-7eiQouwAc3raDogCMLGO8="
   },
@@ -22,7 +21,13 @@ export const beautyAddOns = [
   },
   {
     title: "Eyelash Lift with Tint",
-    price: "from $50",
+    locationPrices: {
+      "location1": "from $65",
+      "location2": "from $80",
+      "location3": "from $65",
+      "location4": "from $65",
+      "location5": "from $65"
+    },
     description: "Lifted and tinted lashes for a dramatic look",
     duration: "45 mins",
     image: "https://media.istockphoto.com/id/1423975299/photo/making-makeup-in-a-beauty-salon-applying-black-mascara-to-the-eyelashes-with-a-makeup-brush.jpg?s=612x612&w=0&k=20&c=vdI3VBmWcWK3TZxG_ak7ala16u-SczCmI2cRyRSYYu8="
