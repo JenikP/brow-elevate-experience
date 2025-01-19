@@ -25,7 +25,7 @@ const Navbar = () => {
   const { selectedLocation, setSelectedLocation, isLoading } = useLocationStore();
 
   const handleCall = () => {
-    window.location.href = "tel:+61123456789";
+    window.location.href = "tel:0415469594";
   };
 
   const handleNavigation = (sectionId: string) => {
