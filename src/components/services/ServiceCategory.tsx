@@ -6,7 +6,6 @@ interface Service {
   title: string;
   price: string;
   description: string;
-  duration: string;
   locationPrices?: {
     [key: string]: string;
   };

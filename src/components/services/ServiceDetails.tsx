@@ -4,10 +4,9 @@ interface ServiceDetailsProps {
   title: string;
   price: string;
   description: string;
-  duration: string;
 }
 
-const ServiceDetails = ({ title, price, description, duration }: ServiceDetailsProps) => {
+const ServiceDetails = ({ title, price, description }: ServiceDetailsProps) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -18,7 +17,6 @@ const ServiceDetails = ({ title, price, description, duration }: ServiceDetailsP
       <h4 className="text-xl font-semibold text-secondary">{title}</h4>
       <p className="text-sm text-warmGray">{description}</p>
       <p className="text-lg font-bold text-secondary">{price}</p>
-      <p className="text-sm text-warmGray">{duration}</p>
     </motion.div>
   );
 };

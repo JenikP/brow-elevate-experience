@@ -6,11 +6,10 @@ interface ServiceCardProps {
   title: string;
   price: string;
   description: string;
-  duration: string;
   image: string;
 }
 
-const ServiceCard: FC<ServiceCardProps> = ({ title, price, description, duration, image }) => {
+const ServiceCard: FC<ServiceCardProps> = ({ title, price, description, image }) => {
   return (
     <motion.div 
       className="h-full flex flex-col rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
@@ -31,7 +30,6 @@ const ServiceCard: FC<ServiceCardProps> = ({ title, price, description, duration
           title={title}
           price={price}
           description={description}
-          duration={duration}
         />
       </div>
     </motion.div>
