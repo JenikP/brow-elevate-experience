@@ -26,6 +26,7 @@ export const comboOffers = [
       title: "Eyebrow Threading & Eyebrow Tint",
     locationPrices: {
       "location1": "from $30",
+        "location2": "Not Available"
       "location3": "from $30",
       "location4": "from $30",
       "location5": "from $30"
