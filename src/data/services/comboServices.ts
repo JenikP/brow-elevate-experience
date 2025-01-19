@@ -24,7 +24,7 @@ export const comboOffers = [
     image: "https://media.istockphoto.com/photos/beauty-treatment-curling-eyelashes-by-using-a-curler-lash-lamination-picture-id1074129756?k=20&m=1074129756&s=612x612&w=0&h=ZhMKMFDf2QMWzfxgNXANoU2EfMQqD8oHYOThfzevwbA="
   },
   {
-    title: "Eyebrow Threading & Eyebrow Tint",
+    title: "Eyebrow Threading + Eyebrow Tint",
     locationPrices: {
       "location1": "from $30",
       "location2": "Not Available",
