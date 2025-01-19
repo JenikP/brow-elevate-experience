@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 
 interface Service {
   title: string;
-  price: string;
+  price?: string;  // Make price optional
   description: string;
   locationPrices?: {
     [key: string]: string;
@@ -20,7 +20,6 @@ interface ServiceCategoryProps {
 
 const ServiceCategory: FC<ServiceCategoryProps> = ({ category, items, selectedLocation }) => {
   const getServiceImage = (service: Service) => {
-    // If the service has its own image, use that first
     if (service.image) {
       return service.image;
     }
@@ -59,7 +58,7 @@ const ServiceCategory: FC<ServiceCategoryProps> = ({ category, items, selectedLo
             {...service}
             price={selectedLocation && service.locationPrices?.[selectedLocation] 
               ? service.locationPrices[selectedLocation]
-              : service.price}
+              : service.price || 'Price varies by location'}
             image={getServiceImage(service)}
           />
         ))}

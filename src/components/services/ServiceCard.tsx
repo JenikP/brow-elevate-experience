@@ -4,7 +4,7 @@ import ServiceDetails from './ServiceDetails';
 
 interface ServiceCardProps {
   title: string;
-  price: string;
+  price: string;  // This remains required as it's always provided by ServiceCategory
   description: string;
   image: string;
 }
