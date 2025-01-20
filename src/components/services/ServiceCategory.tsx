@@ -1,11 +1,10 @@
 import { FC } from 'react';
 import ServiceCard from './ServiceCard';
-import { useLocation } from 'react-router-dom';
 
 interface Service {
   title: string;
-  price?: string;  // Make price optional
   description: string;
+  price?: string;
   locationPrices?: {
     [key: string]: string;
   };
@@ -24,7 +23,6 @@ const ServiceCategory: FC<ServiceCategoryProps> = ({ category, items, selectedLo
       return service.image;
     }
 
-    // Fallback images if no specific image is provided
     const images: { [key: string]: string } = {
       "Eyebrow Threading/Waxing": "https://media.istockphoto.com/id/1219595426/photo/applying-gold-colored-wax-with-spatula-on-womans-face-stock-photo.jpg?s=612x612&w=0&k=20&c=5foFCtmRPF-SWRmcOn8MpNZCnEM4KIgvbyN6sRqtnKQ=",
       "Upper Lip": "https://media.istockphoto.com/id/1075627666/photo/therapist-waxing-womans-upper-lip.jpg?s=612x612&w=0&k=20&c=_HVVmbTzVMuhpOQD1ZpLteJQdX4Yf5fJL1oFn3mohXg=",
