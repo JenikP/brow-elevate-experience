@@ -26,12 +26,72 @@ export const bodyWaxing = [
       "location5": "from $35"
     },
     description: "Partial leg waxing service",
-  
   },
-  {
+   {
     title: "Full Leg",
     price: "from $45",
     description: "Complete leg waxing treatment",
+  }, 
+  
+  {
+    title: "Brazilian",
+    locationPrices: {
+      "location1": "from $50",
+      "location2": "Not Available",
+      "location3": "Not Available",
+      "location4": "Not Available",
+      "location5": "Not Available"
+    },
+  },
+  {
+    title: "Chest",
+    locationPrices: {
+      "location1": "Not Available",
+      "location2": "from $15",
+      "location3": "Not Available",
+      "location4": "Not Available",
+      "location5": "Not Available"
+    },
+  },
+  {
+    title: "Full Back",
+    locationPrices: {
+      "location1": "from $65",
+      "location2": "from $35",
+      "location3": "Not Available",
+      "location4": "Not Available",
+      "location5": "Not Available"
+    },
+  },
+  {
+    title: "Half Back",
+    locationPrices: {
+      "location1": "from $35",
+      "location2": "Not Available",
+      "location3": "Not Available",
+      "location4": "Not Available",
+      "location5": "Not Available"
+    },
+  },
+  {
+    title: "Belly",
+    locationPrices: {
+      "location1": "from $35",
+      "location2": "from $20",
+      "location3": "Not Available",
+      "location4": "Not Available",
+      "location5": "Not Available"
+    },
+  },
+  {
+    title: "Bikini Line",
+    locationPrices: {
+      "location1": "from $20",
+      "location2": "from $25",
+      "location3": "Not Available",
+      "location4": "Not Available",
+      "location5": "Not Available"
+    },
   },
   {
     title: "Full Body",
