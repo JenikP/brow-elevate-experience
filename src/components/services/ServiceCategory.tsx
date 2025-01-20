@@ -3,12 +3,12 @@ import ServiceCard from './ServiceCard';
 
 interface Service {
   title: string;
-  description: string;
-  price?: string;
+  description: string;  // Required field
+  price?: string;  // Optional since some services use locationPrices
   locationPrices?: {
     [key: string]: string;
   };
-  image?: string;
+  image?: string;  // Optional since we have fallbacks
 }
 
 interface ServiceCategoryProps {
