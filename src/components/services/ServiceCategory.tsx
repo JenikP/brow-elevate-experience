@@ -3,12 +3,12 @@ import ServiceCard from './ServiceCard';
 
 interface Service {
   title: string;
-  description: string;  // Required field
-  price?: string;  // Optional since some services use locationPrices
+  description: string;
+  price?: string;
   locationPrices?: {
     [key: string]: string;
   };
-  image?: string;  // Optional since we have fallbacks
+  image?: string;
 }
 
 interface ServiceCategoryProps {
@@ -44,13 +44,23 @@ const ServiceCategory: FC<ServiceCategoryProps> = ({ category, items, selectedLo
     return images[service.title] || images["Eyebrow Threading/Waxing"];
   };
 
+  // Filter out services that are not available for the selected location
+  const availableServices = items.filter(service => {
+    if (!selectedLocation) return true;
+    if (service.locationPrices?.[selectedLocation] === "Not Available") return false;
+    return true;
+  });
+
+  // Only render the category if there are available services
+  if (availableServices.length === 0) return null;
+
   return (
     <div className="mb-16">
       <h3 className="text-2xl font-bold text-primary mb-8 text-center capitalize">
         {category.replace(/([A-Z])/g, ' $1').trim()}
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {items.map((service, index) => (
+        {availableServices.map((service, index) => (
           <ServiceCard
             key={index}
             {...service}
