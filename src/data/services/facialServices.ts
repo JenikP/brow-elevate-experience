@@ -13,18 +13,19 @@ export const facialThreadingWaxing = [
   },
   {
     title: "Upper Lip",
-       locationPrices: {
+    description: "Gentle hair removal for a smooth finish",
+    locationPrices: {
       "location1": "from $10",
       "location2": "from $10",
       "location3": "from $10",
       "location4": "from $10",
       "location5": "from $10"
     },
-    description: "Gentle hair removal for a smooth finish",
     image: "https://media.istockphoto.com/id/1075627666/photo/therapist-waxing-womans-upper-lip.jpg?s=612x612&w=0&k=20&c=_HVVmbTzVMuhpOQD1ZpLteJQdX4Yf5fJL1oFn3mohXg="
   },
   {
     title: "Forehead",
+    description: "Smooth forehead hair removal",
     locationPrices: {
       "location1": "from $12",
       "location2": "from $13",
@@ -32,11 +33,11 @@ export const facialThreadingWaxing = [
       "location4": "from $15",
       "location5": "from $16"
     },
-    description: "Smooth forehead hair removal",
     image: "https://media.istockphoto.com/id/1083288278/photo/eyebrow-threading-epilation-procedure-for-brow-shape-correction.jpg?s=612x612&w=0&k=20&c=ql2jQHMHAYhUxEMcP0RLVujWbCnHgjoRqWSvkBmS_G4="
   },
   {
     title: "Chin",
+    description: "Precise chin hair removal",
     locationPrices: {
       "location1": "from $10",
       "location2": "from $10",
@@ -44,11 +45,11 @@ export const facialThreadingWaxing = [
       "location4": "from $10",
       "location5": "from $10"
     },
-    description: "Precise chin hair removal",
     image: "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=800&q=80"
   },
   {
     title: "Side Burns",
+    description: "Shape and define your sideburns",
     locationPrices: {
       "location1": "from $10",
       "location2": "from $15",
@@ -56,11 +57,11 @@ export const facialThreadingWaxing = [
       "location4": "from $10",
       "location5": "from $12"
     },
-    description: "Shape and define your sideburns",
     image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80"
   },
   {
     title: "Neck",
+    description: "Clean and smooth neck hair removal",
     locationPrices: {
       "location1": "from $10",
       "location2": "from $10",
@@ -68,11 +69,11 @@ export const facialThreadingWaxing = [
       "location4": "from $10",
       "location5": "from $10"
     },
-    description: "Clean and smooth neck hair removal",
     image: "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=800&q=80"
   },
   {
     title: "Full Face",
+    description: "Complete facial hair removal",
     locationPrices: {
       "location1": "from $50",
       "location2": "from $45 Excluding Nose",
@@ -80,7 +81,6 @@ export const facialThreadingWaxing = [
       "location4": "from $50",
       "location5": "from $50"
     },
-    description: "Complete facial hair removal",
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80"
   }
 ];

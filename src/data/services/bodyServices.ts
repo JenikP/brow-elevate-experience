@@ -2,22 +2,21 @@ export const bodyWaxing = [
   {
     title: "Under Arms",
     description: "Smooth underarm hair removal",
-     price: "from $15",
+    price: "from $15",
   },
   {
     title: "Half Arm",
-     price: "from $25",
     description: "Partial arm waxing service",
-
+    price: "from $25",
   },
   {
     title: "Full Arm",
-     price: "from $35",
     description: "Complete arm waxing treatment",
-
+    price: "from $35",
   },
   {
     title: "Half Leg",
+    description: "Partial leg waxing service",
     locationPrices: {
       "location1": "from $35",
       "location2": "from $30",
@@ -25,16 +24,15 @@ export const bodyWaxing = [
       "location4": "from $35",
       "location5": "from $35"
     },
-    description: "Partial leg waxing service",
   },
-   {
+  {
     title: "Full Leg",
-    price: "from $45",
     description: "Complete leg waxing treatment",
-  }, 
-  
+    price: "from $45",
+  },
   {
     title: "Brazilian",
+    description: "Professional Brazilian waxing service",
     locationPrices: {
       "location1": "from $50",
       "location2": "Not Available",
@@ -45,6 +43,7 @@ export const bodyWaxing = [
   },
   {
     title: "Chest",
+    description: "Chest hair removal service",
     locationPrices: {
       "location1": "Not Available",
       "location2": "from $15",
@@ -55,6 +54,7 @@ export const bodyWaxing = [
   },
   {
     title: "Full Back",
+    description: "Complete back hair removal",
     locationPrices: {
       "location1": "from $65",
       "location2": "from $35",
@@ -65,6 +65,7 @@ export const bodyWaxing = [
   },
   {
     title: "Half Back",
+    description: "Partial back hair removal",
     locationPrices: {
       "location1": "from $35",
       "location2": "Not Available",
@@ -75,6 +76,7 @@ export const bodyWaxing = [
   },
   {
     title: "Belly",
+    description: "Belly hair removal service",
     locationPrices: {
       "location1": "from $35",
       "location2": "from $20",
@@ -85,6 +87,7 @@ export const bodyWaxing = [
   },
   {
     title: "Bikini Line",
+    description: "Bikini line waxing service",
     locationPrices: {
       "location1": "from $20",
       "location2": "from $25",
@@ -95,7 +98,7 @@ export const bodyWaxing = [
   },
   {
     title: "Full Body",
-    price: "from $250",
     description: "Complete body waxing package",
+    price: "from $250",
   }
 ];
