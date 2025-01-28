@@ -54,7 +54,7 @@ const Services = () => {
     return (
       <Dialog open={true} onOpenChange={() => {}}>
         <DialogContent 
-          className="bg-white w-[95vw] max-w-[500px] p-8" 
+          className="bg-pearl w-[95vw] max-w-[500px] p-8 shadow-lg" 
           onPointerDownOutside={(e) => e.preventDefault()}
         >
           <DialogHeader>
