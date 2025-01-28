@@ -53,15 +53,18 @@ const Services = () => {
   if (!selectedLocation) {
     return (
       <Dialog open={true} onOpenChange={() => {}}>
-        <DialogContent className="bg-white" onPointerDownOutside={(e) => e.preventDefault()}>
+        <DialogContent 
+          className="bg-white w-[95vw] max-w-[500px] p-8" 
+          onPointerDownOutside={(e) => e.preventDefault()}
+        >
           <DialogHeader>
-            <DialogTitle className="text-xl font-semibold text-secondary">
+            <DialogTitle className="text-2xl font-bold text-secondary text-center mb-6">
               Select Your Preferred Location
             </DialogTitle>
           </DialogHeader>
-          <div className="py-4">
+          <div className="py-6">
             <Select onValueChange={handleLocationSelect}>
-              <SelectTrigger className="bg-white border-2 border-primary/20 focus:border-primary focus:ring-1 focus:ring-primary">
+              <SelectTrigger className="bg-white border-2 border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary h-14 text-lg">
                 <SelectValue placeholder="Choose a location" />
               </SelectTrigger>
               <SelectContent className="bg-white">
@@ -69,7 +72,7 @@ const Services = () => {
                   <SelectItem 
                     key={key} 
                     value={key}
-                    className="hover:bg-primary/10 focus:bg-primary/10 cursor-pointer"
+                    className="hover:bg-primary/10 focus:bg-primary/10 cursor-pointer py-4 text-lg"
                   >
                     {name}
                   </SelectItem>
@@ -78,7 +81,7 @@ const Services = () => {
             </Select>
             <button
               onClick={handleViewLocations}
-              className="mt-4 text-primary hover:text-primary-dark hover:underline w-full text-center font-medium"
+              className="mt-6 text-primary hover:text-primary-dark hover:underline w-full text-center font-medium text-lg py-2"
             >
               View All Locations
             </button>
