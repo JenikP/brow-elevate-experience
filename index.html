@@ -1,17 +1,349 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>brow-elevate-experience</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
-    <meta property="og:image" content="/og-image.svg" />
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brow Arc Threading</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <a href="index.html" class="logo">Brow Arc Threading</a>
+        
+        <div class="desktop-menu">
+          <button onclick="scrollToSection('services')" class="nav-link">Services</button>
+          <button onclick="scrollToSection('about')" class="nav-link">About</button>
+          <button onclick="scrollToSection('testimonials')" class="nav-link">Testimonials</button>
+          <a href="locations.html" class="nav-link">Locations</a>
+          <button onclick="scrollToSection('contact')" class="nav-link">Contact</button>
+          
+          <div class="location-dropdown">
+            <button id="location-dropdown-btn" class="location-btn">
+              <i class="ri-map-pin-line"></i>
+              <span id="selected-location">Select Location</span>
+            </button>
+            <div class="location-dropdown-content" id="location-dropdown-content">
+              <a href="#" data-location="location1" onclick="selectLocation('location1', 'Brandon Park')">Brandon Park</a>
+              <a href="#" data-location="location2" onclick="selectLocation('location2', 'Southland')">Southland</a>
+              <a href="#" data-location="location3" onclick="selectLocation('location3', 'Pakenham')">Pakenham</a>
+              <a href="#" data-location="location4" onclick="selectLocation('location4', 'Stud Park')">Stud Park</a>
+              <a href="#" data-location="location5" onclick="selectLocation('location5', 'Heidelberg')">Heidelberg</a>
+            </div>
+          </div>
+          
+          <a href="tel:+61415469594" class="book-btn">
+            <i class="ri-phone-line"></i>
+            Book Now
+          </a>
+        </div>
+        
+        <div class="mobile-menu-trigger">
+          <div class="mobile-location">
+            <i class="ri-map-pin-line"></i>
+          </div>
+          <button id="mobile-menu-btn">
+            <i class="ri-menu-line" id="menu-icon"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="mobile-menu" id="mobile-menu">
+        <button onclick="scrollToSection('services')" class="mobile-nav-link">Services</button>
+        <button onclick="scrollToSection('about')" class="mobile-nav-link">About</button>
+        <button onclick="scrollToSection('testimonials')" class="mobile-nav-link">Testimonials</button>
+        <a href="locations.html" class="mobile-nav-link">Locations</a>
+        <button onclick="scrollToSection('contact')" class="mobile-nav-link">Contact</button>
+        <a href="tel:+61415469594" class="mobile-book-btn">
+          <i class="ri-phone-line"></i>
+          Book Now
+        </a>
+      </div>
+    </div>
+  </nav>
 
-  <body>
-    <div id="root"></div>
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1>Transform Your Look with Expert Threading</h1>
+        <p>Where precision meets beauty. Experience the art of perfect brows with our expert threading services.</p>
+        <div class="hero-btns">
+          <a href="tel:+61415469594" class="primary-btn">
+            <i class="ri-phone-line"></i>
+            Book Appointment
+          </a>
+          <a href="#services" class="secondary-btn">View Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Services</h2>
+        <p>Experience our comprehensive range of professional beauty services, tailored to enhance your natural beauty.</p>
+        <p id="location-display" class="location-display"></p>
+      </div>
+
+      <div id="services-container">
+        <!-- Service categories will be populated by JavaScript -->
+        <div class="location-selection" id="location-prompt">
+          <h3>Select Your Preferred Location</h3>
+          <select id="location-select" class="location-select">
+            <option value="">Choose a location</option>
+            <option value="location1">Brandon Park</option>
+            <option value="location2">Southland</option>
+            <option value="location3">Pakenham</option>
+            <option value="location4">Stud Park</option>
+            <option value="location5">Heidelberg</option>
+          </select>
+          <button onclick="window.location.href='locations.html'" class="view-locations-btn">
+            View All Locations
+          </button>
+        </div>
+      </div>
+
+      <div class="services-cta">
+        <a href="tel:+61415469594" class="primary-btn">
+          <i class="ri-phone-line"></i>
+          Book Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Threading Info Section -->
+  <section class="threading-info">
+    <div class="container">
+      <div class="threading-content">
+        <h2>What is Eyebrow Threading?</h2>
+        <p>Threading is an ancient method of hair removal originating in Central Asia and India. 
+           Eyebrows threading technique is used to remove hair using twisted piece of cotton thread. 
+           We use only Organic Cotton for sensitive skin.</p>
+        <div class="threading-image">
+          <img src="https://media.istockphoto.com/photos/eyebrow-threading-epilation-procedure-for-brow-shape-correction-picture-id1189794702?k=20&m=1189794702&s=612x612&w=0&h=1xl8fgpCkMk88SVyfPgdOJRtG23yCjFNXHl8fayi7Ys=" 
+               alt="Eyebrow Threading Demonstration">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" alt="Threading expert at work">
+          <div class="experience-badge">
+            <p class="exp-years">10+ Years</p>
+            <p class="exp-text">of Experience</p>
+          </div>
+        </div>
+        
+        <div class="about-content">
+          <h2>Your Beauty, Our Expertise</h2>
+          <p>Since 2014, Brow Arc Threading has been the premier destination for 
+             exceptional high-quality beauty services. Our skilled professionals combine ancient techniques with modern precision to deliver results that enhance your natural beauty.</p>
+          
+          <div class="about-stats">
+            <div class="stat">
+              <p class="stat-number">50,000+</p>
+              <p class="stat-label">Happy Clients</p>
+            </div>
+            <div class="stat">
+              <p class="stat-number">100%</p>
+              <p class="stat-label">Satisfaction</p>
+            </div>
+          </div>
+          
+          <button class="primary-btn">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Our Clients Say</h2>
+        <p>Don't just take our word for it. Here's what our valued clients have to say about their experiences.</p>
+      </div>
+      
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="rating">
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+          </div>
+          <p class="testimonial-text">"The best threading experience I've ever had. The attention to detail is amazing!"</p>
+          <p class="testimonial-author">Sarah Johnson</p>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="rating">
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+          </div>
+          <p class="testimonial-text">"I won't trust anyone else with my brows. Professional, clean, and always perfect results."</p>
+          <p class="testimonial-author">Emily Chen</p>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="rating">
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+            <i class="ri-star-fill"></i>
+          </div>
+          <p class="testimonial-text">"Finally found my go-to place for threading. The staff is skilled and friendly!"</p>
+          <p class="testimonial-author">Maria Garcia</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2>Visit Us Today</h2>
+          <p>We're conveniently located and ready to serve you. Walk-ins are welcome, 
+             but appointments are recommended for minimal wait times.</p>
+          
+          <div class="contact-details">
+            <div class="contact-item">
+              <i class="ri-map-pin-line"></i>
+              <div>
+                <h3>Our Locations Are</h3>
+                <p>Brandon Park Shopping Centre<br>
+                   Stud Park Shopping Centre<br>
+                   Pakenham Central Marketplace<br>
+                   Southland Shopping Centre<br>
+                   Warringal Shopping Centre</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i class="ri-phone-line"></i>
+              <div>
+                <h3>Phone</h3>
+                <p>+61415469594</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i class="ri-mail-line"></i>
+              <div>
+                <h3>Email</h3>
+                <p>browarcthreading@yahoo.com</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <i class="ri-time-line"></i>
+              <div>
+                <h3>Hours Are Different Depending on Location</h3>
+                <p>Monday - Wednesday: 9:00 AM - 5:30 PM<br>
+                   Thursday - Friday: 9:00 AM - 7:00 PM<br>
+                   Saturday: 9:00 AM – 5:00 PM<br>
+                   Sunday: 9:00 AM - 5:00 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form-container">
+          <h3>Send Us a Message</h3>
+          <form id="contact-form" class="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your name">
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="Your email">
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Your message"></textarea>
+            </div>
+            
+            <div class="form-group recaptcha-container">
+              <div id="recaptcha"></div>
+            </div>
+            
+            <button type="submit" id="submit-btn" class="submit-btn" disabled>Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <h3>Brow Arc Threading</h3>
+          <p>Where precision meets beauty. Your trusted destination for professional threading services.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-services">
+          <h4>Services</h4>
+          <ul>
+            <li>Eyebrow Threading</li>
+            <li>Upper Lip Threading</li>
+            <li>Full Face Threading</li>
+            <li>Eyebrow Tinting</li>
+          </ul>
+        </div>
+        
+        <div class="footer-social">
+          <h4>Connect With Us</h4>
+          <div class="social-icons">
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Brow Arc Threading. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit" async defer></script>
+  <script src="script.js"></script>
+</body>
 </html>
