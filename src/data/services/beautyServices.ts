@@ -15,9 +15,9 @@ export const beautyAddOns = [
   {
     title: "Hybrid Tint",
         locationPrices: {
-      "location1": "from $30"
-      "location3": "from $30"
-      "location4": "from $30"
+      "location1": "from $30",
+      "location3": "from $30",
+      "location4": "from $30",
       "location5": "from $30"
       },
     description: "Lifted lashes for a dramatic look",
