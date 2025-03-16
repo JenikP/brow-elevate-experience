@@ -32,7 +32,11 @@ export const beautyAddOns = [
   {
     title: "Eyelash Lift",
         locationPrices: {
-      "location2": "from $70"
+      "location1": "from $65",
+      "location2": "from $70",
+      "location3": "from $65",
+      "location4": "from $65",
+      "location5": "from $65"
     },
     description: "Lifted lashes for a dramatic look",
     image: "https://media.istockphoto.com/id/1303312344/photo/lash-lamination-treatment-in-the-salon.jpg?s=612x612&w=0&k=20&c=jUOPpDWp4m4LwyQFzwpnPxMlg9duwERQCgfgyjOEqcQ="
@@ -70,7 +74,11 @@ export const beautyAddOns = [
   {
     title: "Eyelash Removal",
     locationPrices: {
-      "location2": "from $30"
+            "location1": "from $30",
+      "location2": "from $30",
+      "location3": "from $30",
+      "location4": "from $30",
+      "location5": "from $30"
     },
     description: "Professional removal of eyelash extensions",
     image: "https://media.istockphoto.com/id/958941140/photo/eyelash-removal-procedure-close-up.jpg?s=612x612&w=0&k=20&c=4GqkaP07qXCGlsh_KJx2ceQDvtM3e4zhDMsUhNPdNho="
@@ -78,7 +86,11 @@ export const beautyAddOns = [
   {
     title: "Eyebrow Lamination",
     locationPrices: {
-      "location2": "from $65"
+      "location1": "from $65",
+      "location2": "from $65",
+      "location3": "from $65",
+      "location4": "from $65",
+      "location5": "from $65"
     },
     description: "Restructured brows for a fuller, more defined look",
     image: "https://media.istockphoto.com/id/1137626297/photo/beautiful-woman-close-up-soft-make-up.jpg?s=612x612&w=0&k=20&c=rIgfyC7STjdcRpb9Vr3Uiz2bjBg3GfeoVTBMsMF99yw="
