@@ -31,10 +31,10 @@ const Contact = () => {
     
     try {
       const response = await emailjs.sendForm(
-        'service_xxxxxxx', // Replace with your EmailJS service ID
-        'template_xxxxxxx', // Replace with your EmailJS template ID
+        'service_upmue6g', // Replace with your EmailJS service ID
+        'template_ssjw2rx', // Replace with your EmailJS template ID
         formRef.current,
-        'public_key_xxxxxxx' // Replace with your EmailJS public key
+        'Lb6xJjZn1vHkJrjle' // Replace with your EmailJS public key
       );
 
       if (response.status !== 200) {
