@@ -8,7 +8,7 @@ const Hero = () => {
 
   return (
     <div className="relative min-h-screen flex items-center bg-pearl">
-      <div className="absolute inset-0 bg-[url('https://media.istockphoto.com/id/1325618971/photo/woman-in-gloves-applying-eyebrow-tattoo.jpg?s=612x612&w=0&k=20&c=p09XB77awV3f6k6_5H7fQjb4RMpbCNUEWhwN1XNWlYw=')] bg-cover bg-center opacity-10"></div>
+      <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3762668/pexels-photo-3762668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover bg-center opacity-10"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-3xl animate-fade-up">
