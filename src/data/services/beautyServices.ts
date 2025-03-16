@@ -13,10 +13,29 @@ export const beautyAddOns = [
     image: "https://media.istockphoto.com/photos/closeup-photo-of-beautician-applying-dye-on-womans-eyebrows-stock-picture-id1219595404?k=20&m=1219595404&s=612x612&w=0&h=wcuXUOQKr1U_hxnSHeuXS-7eiQouwAc3raDogCMLGO8="
   },
   {
+    title: "Hybrid Tint",
+        locationPrices: {
+      "location1": "from $30"
+      "location3": "from $30"
+      "location4": "from $30"
+      "location5": "from $30"
+      },
+    description: "Lifted lashes for a dramatic look",
+    image: "https://media.istockphoto.com/id/1327615653/photo/woman-during-eyebrow-tinting-procedure-closeup-view.jpg?s=612x612&w=0&k=20&c=QZoMK6Vf4x4SXuz1F0ElwnGT4tVfOJrrTeylHcTcjwo="
+  },
+  {
     title: "Eyelash Tint",
     price: "from $20",
     description: "Darker, more defined lashes",
     image: "https://t4.ftcdn.net/jpg/06/68/57/55/240_F_668575508_K5FtU9wb9RK1kSpIgLozFCJc9DF6X4E8.jpg"
+  },
+  {
+    title: "Eyelash Lift",
+        locationPrices: {
+      "location2": "from $70"
+    },
+    description: "Lifted lashes for a dramatic look",
+    image: "https://media.istockphoto.com/id/1303312344/photo/lash-lamination-treatment-in-the-salon.jpg?s=612x612&w=0&k=20&c=jUOPpDWp4m4LwyQFzwpnPxMlg9duwERQCgfgyjOEqcQ="
   },
   {
     title: "Eyelash Lift with Tint",
@@ -54,7 +73,7 @@ export const beautyAddOns = [
       "location2": "from $30"
     },
     description: "Professional removal of eyelash extensions",
-    image: "https://media.istockphoto.com/id/1322220448/photo/beautician-removing-false-eyelashes.jpg?s=612x612&w=0&k=20&c=Mz8vGq4sVmLaEUfXKqv09R0YQy2YqrXKwX0DhMgeBOw="
+    image: "https://media.istockphoto.com/id/958941140/photo/eyelash-removal-procedure-close-up.jpg?s=612x612&w=0&k=20&c=4GqkaP07qXCGlsh_KJx2ceQDvtM3e4zhDMsUhNPdNho="
   },
   {
     title: "Eyebrow Lamination",
@@ -62,6 +81,6 @@ export const beautyAddOns = [
       "location2": "from $65"
     },
     description: "Restructured brows for a fuller, more defined look",
-    image: "https://media.istockphoto.com/id/1399188460/photo/eyebrow-laminating.jpg?s=612x612&w=0&k=20&c=vWdAIkdCT4s_7ysGY4y_OG-a7-x9NHfqvDyygb4RgZs="
+    image: "https://media.istockphoto.com/id/1137626297/photo/beautiful-woman-close-up-soft-make-up.jpg?s=612x612&w=0&k=20&c=rIgfyC7STjdcRpb9Vr3Uiz2bjBg3GfeoVTBMsMF99yw="
   }
 ];
