@@ -87,7 +87,7 @@ const locations = [
 const Locations = () => {
   const [selectedLocation, setSelectedLocation] = useState<number | null>(null);
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyCqm_04Dum-ER0Tk9zgm2cTfmZzEmAet-8",
+    googleMapsApiKey: "AIzaSyC4hE2uAkHRHhoZ23Iv8JH_0eXdrDA3ZX0",
   });
 
   if (!isLoaded) return <div>Loading...</div>;
