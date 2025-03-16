@@ -2,7 +2,6 @@ import { Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 import ServiceCategory from './services/ServiceCategory';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 import { useNavigate } from "react-router-dom";
 import { useLocationStore } from "../stores/locationStore";
 import { toast } from "sonner";
@@ -63,22 +62,17 @@ const Services = () => {
             </DialogTitle>
           </DialogHeader>
           <div className="py-6">
-            <Select onValueChange={handleLocationSelect}>
-              <SelectTrigger className="bg-white border-2 border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary h-14 text-lg">
-                <SelectValue placeholder="Choose a location" />
-              </SelectTrigger>
-              <SelectContent className="bg-white">
-                {Object.entries(locationNames).map(([key, name]) => (
-                  <SelectItem 
-                    key={key} 
-                    value={key}
-                    className="hover:bg-primary/10 focus:bg-primary/10 cursor-pointer py-4 text-lg"
-                  >
-                    {name}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <div className="grid grid-cols-1 gap-4">
+              {Object.entries(locationNames).map(([key, name]) => (
+                <button
+                  key={key}
+                  onClick={() => handleLocationSelect(key)}
+                  className="flex items-center justify-between p-4 rounded-lg border-2 border-primary/20 bg-white hover:bg-primary/10 hover:border-primary transition-colors"
+                >
+                  <span className="text-lg font-medium text-secondary">{name}</span>
+                </button>
+              ))}
+            </div>
             <button
               onClick={handleViewLocations}
               className="mt-6 text-primary hover:text-primary-dark hover:underline w-full text-center font-medium text-lg py-2"
