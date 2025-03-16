@@ -27,11 +27,11 @@ export const facialThreadingWaxing = [
     title: "Forehead",
     description: "Smooth forehead hair removal",
     locationPrices: {
-      "location1": "from $12",
-      "location2": "from $13",
-      "location3": "from $14",
-      "location4": "from $15",
-      "location5": "from $16"
+      "location1": "from $10",
+      "location2": "from $10",
+      "location3": "from $10",
+      "location4": "from $10",
+      "location5": "from $10"
     },
     image: "https://media.istockphoto.com/id/1083288278/photo/eyebrow-threading-epilation-procedure-for-brow-shape-correction.jpg?s=612x612&w=0&k=20&c=ql2jQHMHAYhUxEMcP0RLVujWbCnHgjoRqWSvkBmS_G4="
   },
