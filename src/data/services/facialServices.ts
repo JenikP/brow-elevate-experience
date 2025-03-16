@@ -21,7 +21,7 @@ export const facialThreadingWaxing = [
       "location4": "from $10",
       "location5": "from $10"
     },
-    image: "https://media.istockphoto.com/id/1075627666/photo/therapist-waxing-womans-upper-lip.jpg?s=612x612&w=0&k=20&c=_HVVmbTzVMuhpOQD1ZpLteJQdX4Yf5fJL1oFn3mohXg="
+    image: "https://media.istockphoto.com/id/1210999314/photo/lip-threading-in-action-hair-removal-of-upper-lip-close-up.jpg?s=612x612&w=0&k=20&c=lEx9o9RphuQDInoW8N4EEgNoGxdTLwOAnxa7CHhc1Gc="
   },
   {
     title: "Forehead",
@@ -45,7 +45,7 @@ export const facialThreadingWaxing = [
       "location4": "from $10",
       "location5": "from $10"
     },
-    image: "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=800&q=80"
+    image: "https://media.istockphoto.com/id/1703040270/photo/cosmetologist-applying-gel-on-womans-face-for-cosmetic-treatment.jpg?s=612x612&w=0&k=20&c=l6Nkn4Ik6Pazvg3ifiGChyL11RkqufSA9Q0tWPU7UDk="
   },
   {
     title: "Side Burns",
@@ -57,7 +57,7 @@ export const facialThreadingWaxing = [
       "location4": "from $10",
       "location5": "from $12"
     },
-    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80"
+    image: "https://media.istockphoto.com/id/1477768022/photo/yellow-paste-for-shugaring-on-a-wooden-stick-close-up.jpg?s=612x612&w=0&k=20&c=mCs0a_dmusbT3DQPiEgkhujQn9d1Dcs8jd28Jf8fGAw="
   },
   {
     title: "Neck",
@@ -69,7 +69,7 @@ export const facialThreadingWaxing = [
       "location4": "from $10",
       "location5": "from $10"
     },
-    image: "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=800&q=80"
+    image: "https://media.istockphoto.com/id/1359710818/photo/a-cropped-shot-of-a-young-blonde-woman-touching-the-neck-with-her-hand-hiding-wrinkles-sore.jpg?s=612x612&w=0&k=20&c=JQW1HpI6euEJshFmkcJ-yD0tHouas413S78D6HUjyGU="
   },
   {
     title: "Full Face",
@@ -81,6 +81,6 @@ export const facialThreadingWaxing = [
       "location4": "from $50",
       "location5": "from $50"
     },
-    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80"
+    image: "https://media.istockphoto.com/id/1498770664/photo/caucasian-woman-removing-hair-from-eyebrows-with-thread-technique-done-by-eyebrow-stylist.jpg?s=612x612&w=0&k=20&c=LCnp148o0vdLXmLph6O8i3lN-72yH-j_64Zz-iVX804="
   }
 ];
