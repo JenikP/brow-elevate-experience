@@ -1,3 +1,4 @@
+
 export const beautyAddOns = [
   {
     title: "Eyebrow Tint",
@@ -21,7 +22,7 @@ export const beautyAddOns = [
     title: "Eyelash Lift with Tint",
     locationPrices: {
       "location1": "from $65",
-      "location2": "from $80",
+      "location2": "from $70",
       "location3": "from $65",
       "location4": "from $65",
       "location5": "from $65"
@@ -37,14 +38,30 @@ export const beautyAddOns = [
   },
   {
     title: "Eyebrow Lamination with Tint",
-       locationPrices: {
+    locationPrices: {
       "location1": "from $65",
-      "location2": "from $70",
+      "location2": "from $65",
       "location3": "from $65",
       "location4": "from $65",
       "location5": "from $65"
     },
     description: "Restructured and tinted brows for a fuller look",
     image: "https://t4.ftcdn.net/jpg/04/72/10/11/240_F_472101170_GdJpDB6CLoAupjDEYLrjH3Kvo0Mltyyw.jpg"
+  },
+  {
+    title: "Eyelash Removal",
+    locationPrices: {
+      "location2": "from $30"
+    },
+    description: "Professional removal of eyelash extensions",
+    image: "https://media.istockphoto.com/id/1322220448/photo/beautician-removing-false-eyelashes.jpg?s=612x612&w=0&k=20&c=Mz8vGq4sVmLaEUfXKqv09R0YQy2YqrXKwX0DhMgeBOw="
+  },
+  {
+    title: "Eyebrow Lamination",
+    locationPrices: {
+      "location2": "from $65"
+    },
+    description: "Restructured brows for a fuller, more defined look",
+    image: "https://media.istockphoto.com/id/1399188460/photo/eyebrow-laminating.jpg?s=612x612&w=0&k=20&c=vWdAIkdCT4s_7ysGY4y_OG-a7-x9NHfqvDyygb4RgZs="
   }
 ];
