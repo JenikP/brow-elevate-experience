@@ -8,7 +8,7 @@ const Hero = () => {
 
   return (
     <div className="relative min-h-screen flex items-center bg-pearl">
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1649972904349-6e44c42644a7')] bg-cover bg-center opacity-10"></div>
+      <div className="absolute inset-0 bg-[url('')] bg-cover bg-center opacity-10"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-3xl animate-fade-up">
