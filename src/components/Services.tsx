@@ -1,3 +1,4 @@
+
 import { Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 import ServiceCategory from './services/ServiceCategory';
@@ -53,7 +54,7 @@ const Services = () => {
     return (
       <Dialog open={true} onOpenChange={() => {}}>
         <DialogContent 
-          className="bg-pearl w-[95vw] max-w-[500px] p-8 shadow-lg" 
+          className="bg-gradient-to-b from-pearl to-white w-[95vw] max-w-[500px] p-8 shadow-xl rounded-xl border border-primary/20" 
           onPointerDownOutside={(e) => e.preventDefault()}
         >
           <DialogHeader>
@@ -61,21 +62,24 @@ const Services = () => {
               Select Your Preferred Location
             </DialogTitle>
           </DialogHeader>
-          <div className="py-6">
+          <div className="py-6 space-y-4">
             <div className="grid grid-cols-1 gap-4">
               {Object.entries(locationNames).map(([key, name]) => (
                 <button
                   key={key}
                   onClick={() => handleLocationSelect(key)}
-                  className="flex items-center justify-between p-4 rounded-lg border-2 border-primary/20 bg-white hover:bg-primary/10 hover:border-primary transition-colors"
+                  className="flex items-center justify-between p-4 rounded-lg border-2 border-primary/20 bg-white hover:bg-primary/5 hover:border-primary hover:shadow-md transition-all duration-300"
                 >
                   <span className="text-lg font-medium text-secondary">{name}</span>
+                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                  </div>
                 </button>
               ))}
             </div>
             <button
               onClick={handleViewLocations}
-              className="mt-6 text-primary hover:text-primary-dark hover:underline w-full text-center font-medium text-lg py-2"
+              className="mt-8 text-primary hover:text-primary-dark hover:underline w-full text-center font-medium text-lg py-3 border-t border-primary/10 pt-4"
             >
               View All Locations
             </button>
