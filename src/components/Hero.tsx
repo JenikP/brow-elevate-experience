@@ -6,6 +6,7 @@ const Hero = () => {
   const [isImgLoaded, setIsImgLoaded] = useState(false);
   
   useEffect(() => {
+    // Preload the image in the background
     const img = new Image();
     img.src = '/lovable-uploads/hero.jpg';
     img.onload = () => setIsImgLoaded(true);
@@ -17,13 +18,15 @@ const Hero = () => {
 
   return (
     <div className="relative min-h-[500px] sm:min-h-[600px] md:min-h-screen flex items-center bg-pearl">
+      {/* Background image with fade-in effect */}
       <div 
-        className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${isImgLoaded ? 'opacity-10' : 'opacity-0'}`}
-        style={{ backgroundImage: "url('/lovable-uploads/hero.jpg')" }}
+        className={`absolute inset-0 bg-cover bg-center transition-opacity duration-700 ${isImgLoaded ? 'opacity-10' : 'opacity-0'}`}
+        style={{ backgroundImage: `url('/lovable-uploads/hero.jpg')` }}
+        aria-hidden="true"
       ></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-3xl animate-fade-up">
+        <div className="max-w-3xl animate-fade-in">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-secondary mb-4 sm:mb-6">
             Transform Your Look with Expert Threading
           </h1>

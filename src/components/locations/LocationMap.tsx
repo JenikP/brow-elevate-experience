@@ -1,15 +1,10 @@
+
 import { GoogleMap, Marker, InfoWindow } from "@react-google-maps/api";
 import { useState } from "react";
-
-interface Location {
-  id: number;
-  name: string;
-  address: string;
-  coordinates: { lat: number; lng: number };
-}
+import { LocationData } from "../../types/location";
 
 interface LocationMapProps {
-  locations: Location[];
+  locations: LocationData[];
   selectedLocation: number | null;
   onLocationSelect: (id: number) => void;
 }
@@ -17,6 +12,7 @@ interface LocationMapProps {
 const LocationMap = ({ locations, selectedLocation, onLocationSelect }: LocationMapProps) => {
   const [hoveredLocation, setHoveredLocation] = useState<number | null>(null);
 
+  // Calculate center based on all location coordinates
   const mapCenter = {
     lat: -37.9082,
     lng: 145.2305,

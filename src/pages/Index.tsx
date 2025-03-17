@@ -1,14 +1,18 @@
-import { useEffect } from "react";
+
+import { useEffect, lazy, Suspense } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import ServiceSlideshow from "../components/ServiceSlideshow";
-import ThreadingInfo from "../components/ThreadingInfo";
-import Services from "../components/Services";
-import About from "../components/About";
-import Testimonials from "../components/Testimonials";
-import Contact from "../components/Contact";
-import Footer from "../components/Footer";
+import LoadingSpinner from "../components/ui/loading-spinner";
+
+// Lazy load components that aren't immediately visible
+const ServiceSlideshow = lazy(() => import("../components/ServiceSlideshow"));
+const ThreadingInfo = lazy(() => import("../components/ThreadingInfo"));
+const Services = lazy(() => import("../components/Services"));
+const About = lazy(() => import("../components/About"));
+const Testimonials = lazy(() => import("../components/Testimonials"));
+const Contact = lazy(() => import("../components/Contact"));
+const Footer = lazy(() => import("../components/Footer"));
 
 const Index = () => {
   const location = useLocation();
@@ -20,17 +24,22 @@ const Index = () => {
     }
   }, [location]);
 
+  // Loading fallback for lazy-loaded components
+  const renderLoader = () => <div className="flex justify-center py-12"><LoadingSpinner /></div>;
+
   return (
     <div className="min-h-screen">
       <Navbar />
       <Hero />
-      <ServiceSlideshow />
-      <ThreadingInfo />
-      <Services />
-      <About />
-      <Testimonials />
-      <Contact />
-      <Footer />
+      <Suspense fallback={renderLoader()}>
+        <ServiceSlideshow />
+        <ThreadingInfo />
+        <Services />
+        <About />
+        <Testimonials />
+        <Contact />
+        <Footer />
+      </Suspense>
     </div>
   );
 };

@@ -1,12 +1,15 @@
 
 import { Phone } from "lucide-react";
-import { useEffect, useState } from "react";
-import ServiceCategory from './services/ServiceCategory';
+import { useEffect, useState, lazy, Suspense } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
 import { useNavigate } from "react-router-dom";
 import { useLocationStore } from "../stores/locationStore";
 import { toast } from "sonner";
 import { services, locationNames } from "../data/servicesData";
+import LoadingSpinner from "./ui/loading-spinner";
+
+// Lazy load the ServiceCategory component
+const ServiceCategory = lazy(() => import('./services/ServiceCategory'));
 
 const Services = () => {
   const [showLocationDialog, setShowLocationDialog] = useState(true);
@@ -107,14 +110,16 @@ const Services = () => {
           )}
         </div>
 
-        {Object.entries(services).map(([category, items]) => (
-          <ServiceCategory 
-            key={category} 
-            category={category} 
-            items={items} 
-            selectedLocation={selectedLocation}
-          />
-        ))}
+        <Suspense fallback={<div className="py-12 flex justify-center"><LoadingSpinner /></div>}>
+          {Object.entries(services).map(([category, items]) => (
+            <ServiceCategory 
+              key={category} 
+              category={category} 
+              items={items} 
+              selectedLocation={selectedLocation}
+            />
+          ))}
+        </Suspense>
 
         <div className="text-center mt-10 sm:mt-12">
           <button 

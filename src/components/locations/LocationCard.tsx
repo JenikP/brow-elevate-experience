@@ -1,25 +1,12 @@
+
 import { Phone, MapPin, Check } from "lucide-react";
 import { useLocationStore } from "../../stores/locationStore";
 import { Button } from "../ui/button";
 import { toast } from "sonner";
-
-interface LocationHours {
-  [key: string]: string;
-}
-
-interface Location {
-  id: number;
-  name: string;
-  address: string;
-  description?: string;
-  phone: string;
-  hours: LocationHours;
-  image: string;
-  storeId: string;
-}
+import { LocationData } from "../../types/location";
 
 interface LocationCardProps {
-  location: Location;
+  location: LocationData;
   isSelected: boolean;
   onClick: () => void;
 }
@@ -85,6 +72,7 @@ const LocationCard = ({ location, isSelected, onClick }: LocationCardProps) => {
           src={location.image} 
           alt={location.name} 
           className="w-full h-full object-cover"
+          loading="lazy"
         />
       </div>
       
