@@ -152,7 +152,7 @@ const Contact = () => {
               <div className="flex justify-center">
                 <ReCAPTCHA
                   ref={recaptchaRef}
-                  sitekey="6Lf3yvYqAAAAAEHY5aIu--H5-1ryl21egVZgdt5y" // Replace with your reCAPTCHA site key
+                  sitekey="6LcNy_YqAAAAAAg2_QQqh0o7qSaSazRnXuXWEF8A" // Replace with your reCAPTCHA site key
                   onChange={(value) => setCaptchaValue(value)}
                 />
               </div>
