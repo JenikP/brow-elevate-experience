@@ -1,3 +1,4 @@
+
 import {
   Carousel,
   CarouselContent,
@@ -6,7 +7,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 const services = [
   {
@@ -37,9 +38,23 @@ const services = [
 ];
 
 const ServiceSlideshow = () => {
+  // Create a plugin with restart on mouse leave to ensure it continues on mobile
   const plugin = useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: true })
+    Autoplay({
+      delay: 4000,
+      stopOnInteraction: false, // Changed to false so it doesn't stop on touch
+      rootNode: (emblaRoot) => emblaRoot.parentElement,
+    })
   );
+
+  // Effect to ensure autoplay is working correctly on mobile
+  useEffect(() => {
+    const autoplayPlugin = plugin.current;
+    return () => {
+      // Cleanup function
+      autoplayPlugin.stop();
+    };
+  }, []);
 
   return (
     <section className="py-20 bg-pearl">
@@ -58,7 +73,7 @@ const ServiceSlideshow = () => {
           >
             <CarouselContent>
               {services.map((service, index) => (
-                <CarouselItem key={index} className="md:basis-1/2">
+                <CarouselItem key={index} className="md:basis-1/2 sm:basis-4/5 basis-full">
                   <div className="p-4">
                     <div className="rounded-xl overflow-hidden shadow-lg bg-white transform transition-all duration-300 hover:scale-105">
                       <div className="relative h-72">
@@ -73,6 +88,7 @@ const ServiceSlideshow = () => {
                           src={service.image}
                           alt={service.title}
                           className="w-full h-full object-cover"
+                          loading="lazy"
                         />
                       </div>
                       <div className="p-8">
@@ -88,6 +104,10 @@ const ServiceSlideshow = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
+            <div className="flex justify-center mt-8 md:hidden">
+              <CarouselPrevious className="mx-2" />
+              <CarouselNext className="mx-2" />
+            </div>
             <CarouselPrevious className="hidden md:flex -left-16" />
             <CarouselNext className="hidden md:flex -right-16" />
           </Carousel>

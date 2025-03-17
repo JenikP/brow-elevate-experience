@@ -1,3 +1,4 @@
+
 const About = () => {
   return (
     <section id="about" className="py-20 bg-pearl">
@@ -6,9 +7,10 @@ const About = () => {
           <div className="relative">
             <div className="aspect-square rounded-lg overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+                src="/lovable-uploads/4a6d259e-2c69-4327-9302-2fd3265a87cc.png"
                 alt="Threading expert at work"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-primary p-6 rounded-lg">
